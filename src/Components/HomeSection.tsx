@@ -35,7 +35,7 @@ function HomeSection() {
               recentes.
             </p>
             <strong>
-              <GiStarsStack /> Fique a vontade <GiStarsStack />
+              <GiStarsStack /> Fique à vontade <GiStarsStack />
             </strong>
           </Texts>
           <Buttons>
