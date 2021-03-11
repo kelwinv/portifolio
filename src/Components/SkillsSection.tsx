@@ -69,7 +69,7 @@ function SkillsSection() {
               </Button>
             </TopCard>
             <p>
-              Estudo back end des de 2019, comecei com java criando jogos,
+              Estudo back end desde 2019, comecei com java criando jogos,
               depois fui para node, que é meu foco atual
             </p>
           </Card>
