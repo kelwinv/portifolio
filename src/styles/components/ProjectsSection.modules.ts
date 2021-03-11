@@ -147,7 +147,7 @@ export const CardsContainer = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--grey-black);
+    background: var(--grey-dark);
   }
 
   &::-webkit-scrollbar-thumb {

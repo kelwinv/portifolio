@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   position: relative;
-  flex-shrink: 0;
 
   display: flex;
   flex-direction: column;
@@ -10,8 +9,8 @@ export const Container = styled.div`
 
   padding: 8px;
 
-  min-width: 344px;
-  min-height: 239px;
+  width: 344px;
+  height: 239px;
 
   border-radius: 2px;
   background: var(--white);
@@ -50,6 +49,10 @@ export const Container = styled.div`
 
       h1 {
         white-space: initial;
+      }
+
+      > div {
+        max-height: 100%;
       }
     }
   }
@@ -114,6 +117,9 @@ export const TecList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  max-height: 28px;
+
+  transition: 0.7s;
 `;
 
 export const SvgBox = styled.div`
