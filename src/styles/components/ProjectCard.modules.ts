@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   position: relative;
+  flex-shrink: 0;
 
   display: flex;
   flex-direction: column;
@@ -9,8 +10,8 @@ export const Container = styled.div`
 
   padding: 8px;
 
-  width: 344px;
-  height: 239px;
+  min-width: 344px;
+  min-height: 239px;
 
   border-radius: 2px;
   background: var(--white);

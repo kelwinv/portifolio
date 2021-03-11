@@ -88,6 +88,9 @@ export const Menu = styled.div`
 
       p {
         font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
@@ -122,8 +125,8 @@ export const SkillsIcon = styled(design)`
 
 export const CardsContainer = styled.div`
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
 
   width: 100%;
   max-height: 670px;
