@@ -1,5 +1,6 @@
 import {
   SiCss3,
+  SiFirebase,
   SiHtml5,
   SiJavascript,
   SiNextDotJs,
@@ -134,5 +135,14 @@ export default [
     github: "https://github.com/kelwinv/nextlevelweek02",
     tecs: [SiTypescript,SiNodeDotJs,DiSqllite,SiReact],
     tag: "all",
+  },
+  {
+    imgUrl: "https://github.com/kelwinv/nlw06-letmeask/blob/main/.github/Capa.png?raw=true",
+    name: "letmeask",
+    about: "Letmeask é uma aplicação feita para facilitar as pergutas de seus espectadores",
+    github: "https://github.com/kelwinv/nlw06-letmeask/",
+    project: "https://nlw06letmeask.web.app",
+    tecs: [SiTypescript,SiFirebase,SiReact],
+    tag: "code",
   },
 ];
