@@ -10,10 +10,10 @@ import {
   ProjectLink,
   GithubLink,
 } from "../styles/components/ProjectCard.modules";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface ProjectCardProps {
-  imgUrl: string;
+  imgUrl: string | StaticImageData;
   name: string;
   about: string;
   github: string;

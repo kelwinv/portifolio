@@ -23,10 +23,23 @@ import amongUsImg from "public/img/among-us.jpeg";
 import ecoletaImg from "public/img/ecoleta.png";
 import beTheHeroImg from "public/img/be-the-hero.png";
 import gameListImg from "public/img/game-list.png";
-import happyvideoImg from "public/img/happyvideo.gif";
+import randomizadorImg from "public/img/randomizador.png";
+import happyVideo from "public/img/happyvideo.gif";
 import proffyImg from "public/img/proffy.png";
+import { StaticImageData } from "next/image";
+import { IconType } from "react-icons";
 
-const projects_info = [
+export type projectInfoType = {
+  imgUrl: StaticImageData | string;
+  name: string;
+  about: string;
+  github: string;
+  project?: string;
+  tecs: IconType[];
+  tag: string;
+};
+
+const projectsInfo: projectInfoType[] = [
   {
     imgUrl: hollowKnightImg,
     name: "hollowKnight site",
@@ -124,7 +137,7 @@ const projects_info = [
     tag: "all",
   },
   {
-    imgUrl1: "https://i.ibb.co/T87z2py/Screenshot-3.png",
+    imgUrl: randomizadorImg,
     name: "Randomizador de texto",
     about:
       "permite que você escolha uma palavra que retornara as letras embaralhadas ",
@@ -134,7 +147,7 @@ const projects_info = [
     tag: "design",
   },
   {
-    imgUrl: happyvideoImg,
+    imgUrl: happyVideo,
     name: "Happy",
     about: "um app voltado a vistas a casas de adoção, Feito na nlw3",
     github: "https://github.com/kelwinv/NextLevelWeek3",
@@ -150,7 +163,7 @@ const projects_info = [
     tag: "all",
   },
   {
-    imgUrl1:
+    imgUrl:
       "https://github.com/kelwinv/nlw06-letmeask/blob/main/.github/Capa.png?raw=true",
     name: "letmeask",
     about:
@@ -162,4 +175,4 @@ const projects_info = [
   },
 ];
 
-export default projects_info;
+export { projectsInfo };

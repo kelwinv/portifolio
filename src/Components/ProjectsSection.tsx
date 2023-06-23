@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { IconType } from "react-icons/lib";
 
-import projectsApi from "../../projectsApi";
+import { projectInfoType, projectsInfo } from "../../projectsApi";
 
 import {
   Container,
@@ -14,23 +14,13 @@ import {
   CardsContainer,
 } from "../styles/components/ProjectsSection.modules";
 
-interface ProjectsApiProps {
-  imgUrl: string;
-  name: string;
-  about: string;
-  github: string;
-  project?: string;
-  tecs: IconType[];
-  tag: string;
-}
-
 function ProjectsSection() {
   const [section, setSection] = useState("all");
   const [projectsSelected, setProjectsSelected] =
-    useState<ProjectsApiProps[]>(projectsApi);
+    useState<projectInfoType[]>(projectsInfo);
 
   useEffect(() => {
-    const res = projectsApi.filter(
+    const res = projectsInfo.filter(
       (project) =>
         (project.tag === section ||
           project.tag === "all" ||
