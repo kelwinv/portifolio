@@ -15,7 +15,7 @@ function ContactSection() {
       return;
     } else {
       setIsWrong(false);
-      const url = `mailto:kelwin08@gmail.com?Subject=${subject}&Body=${message}`;
+      const url = `mailto:kelwin.v.goncalves@gmail.com?subject=${subject}&body=${message}`;
       router.push(url);
     }
   }
@@ -43,7 +43,7 @@ function ContactSection() {
           <p>Por favor preencha o campo*</p>
           <textarea
             placeholder="Sua mensagem*"
-            name="ContactCommentt"
+            name="ContactComment"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
