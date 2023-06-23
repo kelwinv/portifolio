@@ -16,7 +16,7 @@ function Footer() {
       <Links>
         <div>
           <a
-            href="https://www.instagram.com/kelwindev"
+            href="https://www.linkedin.com/in/kelwinv"
             target="_blank"
             rel="noreferrer"
           >
@@ -24,13 +24,6 @@ function Footer() {
           </a>
           <a href="https://github.com/kelwinv" target="_blank" rel="noreferrer">
             Github
-          </a>
-          <a
-            href="https://www.linkedin.com/in/kelwinv"
-            target="_blank"
-            rel="noreferrer"
-          >
-            instagram
           </a>
         </div>
         <a href="https://storyset.com" target="_blank" rel="noreferrer">

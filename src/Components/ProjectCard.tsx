@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { IconType } from "react-icons/lib";
-import { SiCss3, SiHtml5, SiJavascript, SiSass } from "react-icons/si";
 
 import {
   Container,
@@ -41,7 +39,7 @@ function ProjectCard({
           <h1>{name}</h1>
           <TecList>
             {tecs?.map(TecIcon => (
-              <SvgBox key={TecIcon.name}>
+              <SvgBox key={TecIcon?.name}>
                 <TecIcon />
               </SvgBox>
             ))}

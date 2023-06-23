@@ -1,5 +1,5 @@
 import { GiStarsStack } from "react-icons/gi";
-import { GrInstagram, GrGithub, GrLinkedinOption } from "react-icons/gr";
+import { GrMail, GrGithub, GrLinkedinOption } from "react-icons/gr";
 
 import {
   Container,
@@ -26,8 +26,9 @@ function HomeSection() {
             <SubTitle>Dev FullStack</SubTitle>
             <p>
               {" "}
-              👋 Oi, me chamo kelwin tenho 18 anos, e sou um desenvolvedor
-              fullstack.
+              👋 Oi, me chamo Kelwin e sou Desenvolvedor full-stack web,
+              apaixonado por tecnologias,Estou sempre buscando aprimoramento
+              profissional e desafios.
             </p>
             <p>
               {" "}
@@ -53,11 +54,11 @@ function HomeSection() {
       </TopSection>
       <Icons>
         <a
-          href="https://www.instagram.com/kelwindev"
+          href="mailto:kelwin.v.goncalves@gmail.com?subject=Assunto do email&body=olá kelwin vim pelo seu site"
           target="_blank"
           rel="noreferrer"
         >
-          <GrInstagram />
+          <GrMail />
         </a>
         <a href="https://github.com/kelwinv" target="_blank" rel="noreferrer">
           <GrGithub />

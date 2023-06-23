@@ -5,15 +5,15 @@ import {
   SiCss3,
   SiJavascript,
   SiSass,
-  SiNodeDotJs,
+  SiNodedotjs,
   SiTypescript,
   SiPostgresql,
   SiGit,
   SiMongodb,
   SiMysql,
   SiReact,
-  SiNextDotJs,
   SiFigma,
+  SiNextdotjs
 } from "react-icons/si";
 
 import {
@@ -112,7 +112,7 @@ function SkillsSection() {
                 <Title>Tecs em uso</Title>
                 <ul>
                   <TecsCard>
-                    <SiNodeDotJs />
+                    <SiNodedotjs />
                     <p>Node</p>
                   </TecsCard>
                   <TecsCard>
@@ -157,7 +157,7 @@ function SkillsSection() {
                       <SiTypescript />
                     </SvgBox>
                     <SvgBox>
-                      <SiNodeDotJs />
+                      <SiNodedotjs />
                     </SvgBox>
                     <SvgBox>
                       <SiPostgresql />
@@ -220,7 +220,7 @@ function SkillsSection() {
                     <p>Css </p>
                   </TecsCard>
                   <TecsCard>
-                    <SiNextDotJs />
+                    <SiNextdotjs />
                     <p>Next.js </p>
                   </TecsCard>
                 </ul>

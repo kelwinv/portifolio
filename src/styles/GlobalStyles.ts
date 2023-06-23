@@ -35,11 +35,10 @@ const GlobalStyles = createGlobalStyle`
     --grey:#54475E ;
     --grey-dark:#2F2338 ;
     --grey-black:#19111F ;
-    --purple-linear:linear-gradient(90deg, var(--purple-light) 0%, var(--purple-dark) 100%); ;
-    --white-linear: linear-gradient(90deg, var(--white-ice) 0%, var(--white) 100%); 
-    --dark-linear: linear-gradient(180deg, var(--grey-black) 49.11%, var(--grey-dark) 100%);;
+    --purple-linear:linear-gradient(90deg, var(--purple-light) 0%, var(--purple-dark) 100%);
+    --white-linear: linear-gradient(90deg, var(--white-ice) 0%, var(--white) 100%);
+    --dark-linear: linear-gradient(180deg, var(--grey-black) 49.11%, var(--grey-dark) 100%);
   }
-  
 `;
 
 export default GlobalStyles;

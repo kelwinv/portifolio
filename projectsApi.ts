@@ -3,13 +3,13 @@ import {
   SiFirebase,
   SiHtml5,
   SiJavascript,
-  SiNextDotJs,
-  SiNodeDotJs,
+  SiNextdotjs,
+  SiNodedotjs,
   SiPostgresql,
   SiReact,
   SiSass,
-  SiSocketDotIo,
-  SiStyledComponents,
+  SiSocketdotio,
+  SiStyledcomponents,
   SiTypescript,
 } from "react-icons/si";
 import { DiSqllite } from "react-icons/di";
@@ -29,7 +29,7 @@ export default [
     name: "nlw04-node",
     about: "Feito na nlw 4, é um projeto de email que recebe nps dos usuários",
     github: "https://github.com/kelwinv/nlw04-node",
-    tecs: [SiTypescript, SiNodeDotJs, DiSqllite],
+    tecs: [SiTypescript, SiNodedotjs, DiSqllite],
     tag: "code",
   },
   {
@@ -39,7 +39,7 @@ export default [
       "é uma aplicação que visa melhorar a saúde, dando exercícios a cada 25 minutos",
     github: "https://github.com/kelwinv/moveit",
     project: "https://nextmoveit.vercel.app",
-    tecs: [SiTypescript, SiNextDotJs],
+    tecs: [SiTypescript, SiNextdotjs],
     tag: "design",
   },
   {
@@ -49,7 +49,7 @@ export default [
       "uma forma de compartilhar seu perfil no github com quem passar pelo site",
     github: "https://github.com/kelwinv/dev-list",
     project: "https://dev-list.vercel.app",
-    tecs: [SiTypescript, SiReact, SiStyledComponents],
+    tecs: [SiTypescript, SiReact, SiStyledcomponents],
     tag: "design",
   },
   {
@@ -58,7 +58,7 @@ export default [
     about:
       "uma forma de compartilhar seu perfil no github com quem passar pelo site",
     github: "https://github.com/kelwinv/dev-list-server",
-    tecs: [SiTypescript, SiNodeDotJs, SiPostgresql],
+    tecs: [SiTypescript, SiNodedotjs, SiPostgresql],
     tag: "code",
   },
   {
@@ -68,10 +68,10 @@ export default [
     github: "https://github.com/kelwinv/chat-com-socket.io",
     tecs: [
       SiTypescript,
-      SiNodeDotJs,
-      SiSocketDotIo,
+      SiNodedotjs,
+      SiSocketdotio,
       SiReact,
-      SiStyledComponents,
+      SiStyledcomponents,
     ],
     tag: "all",
   },
@@ -91,7 +91,7 @@ export default [
     about:
       "conecta empresas de coleta de resíduos as pessoas que precisam descartar seus resíduos",
     github: "https://github.com/kelwinv/NLW-Booster",
-    tecs: [SiTypescript, DiSqllite, SiNodeDotJs, SiReact],
+    tecs: [SiTypescript, DiSqllite, SiNodedotjs, SiReact],
     tag: "all",
   },
   {
@@ -100,7 +100,7 @@ export default [
     about:
       "Conecta ONGs e outras instituições a pessoas que tem disponibilidade para ajudar",
     github: "https://github.com/kelwinv/semanaOminiStack11",
-    tecs: [SiJavascript, DiSqllite, SiNodeDotJs, SiReact],
+    tecs: [SiJavascript, DiSqllite, SiNodedotjs, SiReact],
     tag: "all",
   },
   {
@@ -108,7 +108,7 @@ export default [
     name: "Game List",
     about: "Aplicação que permite que você salve seu jogos favoritos",
     github: "https://github.com/kelwinv/Game-list",
-    tecs: [SiTypescript,SiPostgresql,SiReact,SiStyledComponents],
+    tecs: [SiTypescript,SiPostgresql,SiReact,SiStyledcomponents],
     tag: "all",
   },
   {
@@ -117,7 +117,7 @@ export default [
     about: "permite que você escolha uma palavra que retornara as letras embaralhadas ",
     github: "https://github.com/kelwinv/Game-list",
     project: "https://randomizador-de-texto.herokuapp.com/",
-    tecs: [SiTypescript,SiReact,SiStyledComponents],
+    tecs: [SiTypescript,SiReact,SiStyledcomponents],
     tag: "design",
   },
   {
@@ -125,7 +125,7 @@ export default [
     name: "Happy",
     about: "um app voltado a vistas a casas de adoção, Feito na nlw3",
     github: "https://github.com/kelwinv/NextLevelWeek3",
-    tecs: [SiTypescript,SiNodeDotJs,DiSqllite,SiReact],
+    tecs: [SiTypescript,SiNodedotjs,DiSqllite,SiReact],
     tag: "all",
   },
   {
@@ -133,7 +133,7 @@ export default [
     name: "Proffy",
     about: "um app que conecta professores a alunos, feito na nlw2",
     github: "https://github.com/kelwinv/nextlevelweek02",
-    tecs: [SiTypescript,SiNodeDotJs,DiSqllite,SiReact],
+    tecs: [SiTypescript,SiNodedotjs,DiSqllite,SiReact],
     tag: "all",
   },
   {
