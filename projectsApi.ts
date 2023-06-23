@@ -14,9 +14,21 @@ import {
 } from "react-icons/si";
 import { DiSqllite } from "react-icons/di";
 
-export default [
+import hollowKnightImg from "public/img/hollow-knight.png";
+import nodeImg from "public/img/node.jpg";
+import nlw4Img from "public/img/nlw4.png";
+import devListImg from "public/img/dev-list.png";
+import chatComSocketImg from "public/img/chat-com-socket.png";
+import amongUsImg from "public/img/among-us.jpeg";
+import ecoletaImg from "public/img/ecoleta.png";
+import beTheHeroImg from "public/img/be-the-hero.png";
+import gameListImg from "public/img/game-list.png";
+import happyvideoImg from "public/img/happyvideo.gif";
+import proffyImg from "public/img/proffy.png";
+
+const projects_info = [
   {
-    imgUrl: "img/hollow-knight.png",
+    imgUrl: hollowKnightImg,
     name: "hollowKnight site",
     about: "um site feito com sass, quem tem como base o jogo hollowKnight",
     github: "https://github.com/kelwinv/hollow-knight-scss",
@@ -25,7 +37,7 @@ export default [
     tag: "design",
   },
   {
-    imgUrl: "img/node.jpg",
+    imgUrl: nodeImg,
     name: "nlw04-node",
     about: "Feito na nlw 4, é um projeto de email que recebe nps dos usuários",
     github: "https://github.com/kelwinv/nlw04-node",
@@ -33,7 +45,7 @@ export default [
     tag: "code",
   },
   {
-    imgUrl: "img/nlw4.png",
+    imgUrl: nlw4Img,
     name: "moveit",
     about:
       "é uma aplicação que visa melhorar a saúde, dando exercícios a cada 25 minutos",
@@ -43,7 +55,7 @@ export default [
     tag: "design",
   },
   {
-    imgUrl: "img/dev-list.png",
+    imgUrl: devListImg,
     name: "dev list",
     about:
       "uma forma de compartilhar seu perfil no github com quem passar pelo site",
@@ -53,7 +65,7 @@ export default [
     tag: "design",
   },
   {
-    imgUrl: "img/dev-list.png",
+    imgUrl: devListImg,
     name: "dev list server",
     about:
       "uma forma de compartilhar seu perfil no github com quem passar pelo site",
@@ -62,7 +74,7 @@ export default [
     tag: "code",
   },
   {
-    imgUrl: "img/chat-com-socket.png",
+    imgUrl: chatComSocketImg,
     name: "chat com socket.io",
     about: "chat em tempo real com node + socket",
     github: "https://github.com/kelwinv/chat-com-socket.io",
@@ -77,7 +89,7 @@ export default [
   },
 
   {
-    imgUrl: "img/among-us.jpeg",
+    imgUrl: amongUsImg,
     name: "among Us css",
     about: "um desafio de css feito com objetivo de testar conhecimento",
     github: "https://github.com/kelwinv/amongUs-css-drawing",
@@ -86,7 +98,7 @@ export default [
     tag: "design",
   },
   {
-    imgUrl: "img/ecoleta.png",
+    imgUrl: ecoletaImg,
     name: "Ecoleta",
     about:
       "conecta empresas de coleta de resíduos as pessoas que precisam descartar seus resíduos",
@@ -95,7 +107,7 @@ export default [
     tag: "all",
   },
   {
-    imgUrl: "img/be-the-hero.png",
+    imgUrl: beTheHeroImg,
     name: "be the hero",
     about:
       "Conecta ONGs e outras instituições a pessoas que tem disponibilidade para ajudar",
@@ -104,45 +116,50 @@ export default [
     tag: "all",
   },
   {
-    imgUrl: "img/game-list.png",
+    imgUrl: gameListImg,
     name: "Game List",
     about: "Aplicação que permite que você salve seu jogos favoritos",
     github: "https://github.com/kelwinv/Game-list",
-    tecs: [SiTypescript,SiPostgresql,SiReact,SiStyledcomponents],
+    tecs: [SiTypescript, SiPostgresql, SiReact, SiStyledcomponents],
     tag: "all",
   },
   {
-    imgUrl: "https://i.ibb.co/T87z2py/Screenshot-3.png",
+    imgUrl1: "https://i.ibb.co/T87z2py/Screenshot-3.png",
     name: "Randomizador de texto",
-    about: "permite que você escolha uma palavra que retornara as letras embaralhadas ",
+    about:
+      "permite que você escolha uma palavra que retornara as letras embaralhadas ",
     github: "https://github.com/kelwinv/Game-list",
     project: "https://randomizador-de-texto.herokuapp.com/",
-    tecs: [SiTypescript,SiReact,SiStyledcomponents],
+    tecs: [SiTypescript, SiReact, SiStyledcomponents],
     tag: "design",
   },
   {
-    imgUrl: "img/happyvideo.gif",
+    imgUrl: happyvideoImg,
     name: "Happy",
     about: "um app voltado a vistas a casas de adoção, Feito na nlw3",
     github: "https://github.com/kelwinv/NextLevelWeek3",
-    tecs: [SiTypescript,SiNodedotjs,DiSqllite,SiReact],
+    tecs: [SiTypescript, SiNodedotjs, DiSqllite, SiReact],
     tag: "all",
   },
   {
-    imgUrl: "img/proffy.png",
+    imgUrl: proffyImg,
     name: "Proffy",
     about: "um app que conecta professores a alunos, feito na nlw2",
     github: "https://github.com/kelwinv/nextlevelweek02",
-    tecs: [SiTypescript,SiNodedotjs,DiSqllite,SiReact],
+    tecs: [SiTypescript, SiNodedotjs, DiSqllite, SiReact],
     tag: "all",
   },
   {
-    imgUrl: "https://github.com/kelwinv/nlw06-letmeask/blob/main/.github/Capa.png?raw=true",
+    imgUrl1:
+      "https://github.com/kelwinv/nlw06-letmeask/blob/main/.github/Capa.png?raw=true",
     name: "letmeask",
-    about: "Letmeask é uma aplicação feita para facilitar as pergutas de seus espectadores",
+    about:
+      "Letmeask é uma aplicação feita para facilitar as pergutas de seus espectadores",
     github: "https://github.com/kelwinv/nlw06-letmeask/",
     project: "https://nlw06letmeask.web.app",
-    tecs: [SiTypescript,SiFirebase,SiReact],
+    tecs: [SiTypescript, SiFirebase, SiReact],
     tag: "code",
   },
 ];
+
+export default projects_info;

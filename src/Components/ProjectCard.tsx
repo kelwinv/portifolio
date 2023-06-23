@@ -10,6 +10,7 @@ import {
   ProjectLink,
   GithubLink,
 } from "../styles/components/ProjectCard.modules";
+import Image from "next/image";
 
 interface ProjectCardProps {
   imgUrl: string;
@@ -30,7 +31,7 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <Container>
-      <img src={imgUrl} alt={`${name}-img`} />
+      <Image src={imgUrl} width={250} height={250} alt={`${name}-img`} />
       <Texts>
         <p>{about}</p>
       </Texts>
@@ -38,7 +39,7 @@ function ProjectCard({
         <LeftDiv>
           <h1>{name}</h1>
           <TecList>
-            {tecs?.map(TecIcon => (
+            {tecs?.map((TecIcon) => (
               <SvgBox key={TecIcon?.name}>
                 <TecIcon />
               </SvgBox>
@@ -50,7 +51,7 @@ function ProjectCard({
             href={project}
             target="_blank"
             rel="noreferrer"
-            className={!project && "disabled"}
+            className={!project ? "disabled" : ""}
           >
             VER PROJETO
           </ProjectLink>

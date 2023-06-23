@@ -36,7 +36,7 @@ function ContactSection() {
             placeholder="Assunto*"
             name="ContactName"
             value={subject}
-            onChange={e => setSubject(e.target.value)}
+            onChange={(e) => setSubject(e.target.value)}
           />
         </label>
         <label className={isWrong && !message ? "error" : undefined}>
@@ -45,7 +45,7 @@ function ContactSection() {
             placeholder="Sua mensagem*"
             name="ContactCommentt"
             value={message}
-            onChange={e => setMessage(e.target.value)}
+            onChange={(e) => setMessage(e.target.value)}
           />
         </label>
         <button type="submit">ENVIAR</button>

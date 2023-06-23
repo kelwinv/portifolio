@@ -26,13 +26,12 @@ interface ProjectsApiProps {
 
 function ProjectsSection() {
   const [section, setSection] = useState("all");
-  const [projectsSelected, setProjectsSelected] = useState<ProjectsApiProps[]>(
-    projectsApi
-  );
+  const [projectsSelected, setProjectsSelected] =
+    useState<ProjectsApiProps[]>(projectsApi);
 
   useEffect(() => {
     const res = projectsApi.filter(
-      project =>
+      (project) =>
         (project.tag === section ||
           project.tag === "all" ||
           section === "all") &&
@@ -70,7 +69,7 @@ function ProjectsSection() {
         </Menu>
       </TopBar>
       <CardsContainer>
-        {projectsSelected.map(project => (
+        {projectsSelected.map((project) => (
           <ProjectCard
             key={`${project.name}-${project.tag}`}
             imgUrl={project.imgUrl}

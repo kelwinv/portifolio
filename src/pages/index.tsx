@@ -12,16 +12,16 @@ import GlobalStyles from "../styles/GlobalStyles";
 export default function App() {
   return (
     <div className="App">
-        <Head>
-          <title>Kelwin vieira</title>
-        </Head>
-        <Header />
-        <HomeSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-        <Footer />
-        <GlobalStyles />
+      <Head>
+        <title>Kelwin vieira</title>
+      </Head>
+      <Header />
+      <HomeSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <ContactSection />
+      <Footer />
+      <GlobalStyles />
     </div>
   );
 }

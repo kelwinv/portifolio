@@ -13,7 +13,7 @@ import {
   SiMysql,
   SiReact,
   SiFigma,
-  SiNextdotjs
+  SiNextdotjs,
 } from "react-icons/si";
 
 import {
@@ -43,6 +43,9 @@ import {
   GitHubButton,
   ProjectButton,
 } from "../styles/components/SkillsSection.modules";
+import Image from "next/image";
+
+import HighlightProjectImg from "public/img/dev-list.png";
 
 function SkillsSection() {
   const [sectionTec, setSectionTec] = useState("backend");
@@ -69,8 +72,8 @@ function SkillsSection() {
               </Button>
             </TopCard>
             <p>
-              Estudo back end desde 2019, comecei com java criando jogos,
-              depois fui para node, que é meu foco atual
+              Estudo back end desde 2019, comecei com java criando jogos, depois
+              fui para node, que é meu foco atual
             </p>
           </Card>
           <Card className={sectionTec === "frontend" ? "open" : undefined}>
@@ -150,7 +153,12 @@ function SkillsSection() {
                 <Title>Projeto em destaque</Title>
                 <FeaturedTopdiv>
                   <ImgContainer>
-                    <img src="img/dev-list.png" alt="imagem do projeto" />
+                    <Image
+                      src={HighlightProjectImg}
+                      width={250}
+                      height={250}
+                      alt="imagem do projeto"
+                    />
                   </ImgContainer>
                   <TecList>
                     <SvgBox>
@@ -238,7 +246,10 @@ function SkillsSection() {
                 <Title>Projeto em destaque</Title>
                 <FeaturedTopdiv>
                   <ImgContainer>
-                    <img src="img/hollow-knight.png" alt="imagem do projeto" />
+                    <Image
+                      src="img/hollow-knight.png"
+                      alt="imagem do projeto"
+                    />
                   </ImgContainer>
                   <TecList>
                     <SvgBox>
@@ -298,7 +309,7 @@ function SkillsSection() {
                 <Title>Projeto em destaque</Title>
                 <FeaturedTopdiv>
                   <ImgContainer>
-                    <img src="img/capa.png" alt="imagem do projeto" />
+                    <Image src="img/capa.png" alt="imagem do projeto" />
                   </ImgContainer>
                 </FeaturedTopdiv>
                 <ProjectTexts>

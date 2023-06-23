@@ -58,10 +58,9 @@ export const Texts = styled.div`
       line-height: initial;
     }
 
-    strong{
+    strong {
       margin-top: 24px;
     }
-
 
     height: initial;
   }
