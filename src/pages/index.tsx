@@ -7,7 +7,7 @@ import HomeSection from "../Components/HomeSection";
 import ProjectsSection from "../Components/ProjectsSection";
 import SkillsSection from "../Components/SkillsSection";
 import Footer from "../Components/Footer";
-import GlobalStyles from "../styles/GlobalStyles";
+import { GlobalStyles } from "../styles/GlobalStyles";
 
 export default function App() {
   return (
