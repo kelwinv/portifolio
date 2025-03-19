@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --background: #D0CCE9;
+  --foreground: #171717;
+  --navy: #0F0D1D;
+  --navy-light: #16132A;
+  --pink: #E62E62;
+  --pink-light: #F15681;
+  --light: #EBE8FF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-pink: var(--pink);
+  --color-pink-light: var(--pink-light);
+  --color-light: var(--light);
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(180deg, #0F0D1D 0%, #16132A 32%);
+    --foreground: var(--light);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat);
+}
+
+.title {
+  color: var(--pink);
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.subtitle {
+  color: var(--foreground);
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
