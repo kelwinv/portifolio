@@ -27,8 +27,9 @@ export default function Home() {
         a melhor experiência possível. Voltaremos em breve com novidades!
       </p>
 
+      <a href="https://portifolio-git-main-kelwinv.vercel.app" className="text-pink-light underline hover:text-pink">Site antigo</a>
 
-      <div className="mt-12 flex flex-col sm:flex-row items-center gap-6 ">
+      <div className="mt-12 flex flex-col sm:flex-row items-center gap-6">
         <a href="mailto:kelwin.v.goncalves@gmail.com" className="group hover:text-pink-500 flex items-center gap-2 text-brand-pink hover:underline">
           <i className='group-hover:-translate-y-1 transition'>
             <Mail />

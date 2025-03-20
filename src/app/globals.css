@@ -2,27 +2,28 @@
 
 @import "tailwindcss";
 
-:root {
-  --background: #D0CCE9;
-  --foreground: #171717;
-  --navy: #0F0D1D;
-  --navy-light: #16132A;
-  --pink: #E62E62;
-  --pink-light: #F15681;
-  --light: #EBE8FF;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-navy: var(--navy);
-  --color-navy-light: var(--navy-light);
-  --color-pink: var(--pink);
-  --color-pink-light: var(--pink-light);
-  --color-light: var(--light);
+  --color-background: #D0CCE9;
+  --color-foreground: #171717;
+  --color-navy: #0F0D1D;
+  --color-navy-light: #16132A;
+  --color-pink: #E62E62;
+  --color-pink-light: #F15681;
+  --color-light: #EBE8FF;
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 }
+
+:root {
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
+  --navy: var(--color-navy);
+  --navy-light: var(--color-navy-light);
+  --pink: var(--color-pink);
+  --pink-light: var(--color-pink-light);
+  --light: var(--color-light);
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -37,7 +38,12 @@ body {
   font-family: var(--font-poppins);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-montserrat);
 }
 
