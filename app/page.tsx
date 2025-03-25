@@ -1,17 +1,17 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from "lucide-react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-center px-4 py-12">
+    <div className="flex h-screen w-screen flex-col items-center justify-center px-4 py-12">
       <div className="mb-8">
-        <div className="w-24 h-24 bg-brand-gold rounded-lg flex items-center justify-center">
-          <Image src="/logo.png" alt='logo' width={250} height={250} />
+        <div className="bg-brand-gold flex h-24 w-24 items-center justify-center rounded-lg">
+          <Image src="/logo.png" alt="logo" width={250} height={250} />
         </div>
       </div>
 
-      <div className="w-full max-w-lg justify-center flex mx-auto mb-10">
+      <div className="mx-auto mb-10 flex w-full max-w-lg justify-center">
         <Image
           src="/maintenance.svg"
           width={400}
@@ -20,32 +20,51 @@ export default function Home() {
         />
       </div>
 
-      <h1 className="title text-center mb-3">Site em Manutenção</h1>
-      <h2 className="subtitle text-center mb-6">Estamos construindo algo incrível!</h2>
-      <p className="text-center max-w-md mx-auto mb-8">
-        Nosso site está passando por uma reformulação completa para trazer
-        a melhor experiência possível. Voltaremos em breve com novidades!
+      <h1 className="title mb-3 text-center">Site em Manutenção</h1>
+      <h2 className="subtitle mb-6 text-center">
+        Estamos construindo algo incrível!
+      </h2>
+      <p className="mx-auto mb-8 max-w-md text-center">
+        Nosso site está passando por uma reformulação completa para trazer a
+        melhor experiência possível. Voltaremos em breve com novidades!
       </p>
 
-      <a href="https://portifolio-git-main-kelwinv.vercel.app" className="text-pink-light underline hover:text-pink">Site antigo</a>
+      <a
+        href="https://portifolio-git-main-kelwinv.vercel.app"
+        className="text-pink-light hover:text-pink underline"
+      >
+        Site antigo
+      </a>
 
-      <div className="mt-12 flex flex-col sm:flex-row items-center gap-6">
-        <a href="mailto:kelwin.v.goncalves@gmail.com" className="group hover:text-pink-500 flex items-center gap-2 text-brand-pink hover:underline">
-          <i className='group-hover:-translate-y-1 transition'>
+      <div className="mt-12 flex flex-col items-center gap-6 sm:flex-row">
+        <a
+          href="mailto:kelwin.v.goncalves@gmail.com"
+          className="group text-brand-pink flex items-center gap-2 hover:text-pink-500 hover:underline"
+        >
+          <i className="transition group-hover:-translate-y-1">
             <Mail />
           </i>
           kelwin.v.goncalves@gmail.com
         </a>
-        <a href="https://github.com/kelwinv" className="group hover:text-pink-500 flex items-center gap-2 text-brand-pink hover:underline">
-          <i className='group-hover:-translate-y-1 transition'><Github /></i>
+        <a
+          href="https://github.com/kelwinv"
+          className="group text-brand-pink flex items-center gap-2 hover:text-pink-500 hover:underline"
+        >
+          <i className="transition group-hover:-translate-y-1">
+            <Github />
+          </i>
           Github
         </a>
-        <a href="https://linkedin.com/in/kelwinv" className="group hover:text-pink-500 flex items-center gap-2 text-brand-pink hover:underline">
-          <i className='group-hover:-translate-y-1 transition'><Linkedin /></i>
+        <a
+          href="https://linkedin.com/in/kelwinv"
+          className="group text-brand-pink flex items-center gap-2 hover:text-pink-500 hover:underline"
+        >
+          <i className="transition group-hover:-translate-y-1">
+            <Linkedin />
+          </i>
           Linkedin
         </a>
       </div>
     </div>
   );
 }
-

@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={"antialiased"}
-      >
+      <body className={"antialiased"}>
         {children}
         <SpeedInsights />
       </body>
