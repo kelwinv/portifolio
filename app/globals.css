@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
 
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #D0CCE9;
+  --color-background: #d0cce9;
   --color-foreground: #171717;
-  --color-navy: #0F0D1D;
-  --color-navy-light: #16132A;
-  --color-pink: #E62E62;
-  --color-pink-light: #F15681;
-  --color-light: #EBE8FF;
+  --color-navy: #0f0d1d;
+  --color-navy-light: #16132a;
+  --color-pink: #e62e62;
+  --color-pink-light: #f15681;
+  --color-light: #ebe8ff;
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 }
@@ -24,10 +24,9 @@
   --light: var(--color-light);
 }
 
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(180deg, #0F0D1D 0%, #16132A 32%);
+    --background: linear-gradient(180deg, #0f0d1d 0%, #16132a 32%);
     --foreground: var(--light);
   }
 }
