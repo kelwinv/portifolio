@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "kelwin-vieira",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,16 +9,26 @@
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint:check": "next lint --dir .",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test:jest": "jest",
+    "test:jest:watch": "jest --watch",
+    "test:cy": "start-server-and-test dev http://localhost:3000 test:cy:run",
+    "test:cy:watch": "start-server-and-test dev http://localhost:3000 test:cy:open",
+    "test:cy:run": "cypress run",
+    "test:cy:open": "cypress open --browser chrome --config video=false"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.2.3",
     "@vercel/speed-insights": "^1.2.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cypress": "^14.2.1",
     "lucide-react": "^0.483.0",
     "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.1.0",
+    "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
@@ -40,12 +50,14 @@
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "start-server-and-test": "^2.0.11",
     "tailwindcss": "^4.0.14",
     "ts-node": "^10.9.2",
     "typescript": "^5"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "cypress",
       "sharp"
     ]
   }
