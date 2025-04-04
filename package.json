@@ -42,6 +42,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cypress-real-events": "^1.14.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "15.2.3",
     "eslint-config-prettier": "^10.1.1",
