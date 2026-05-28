@@ -73,3 +73,42 @@ h6 {
     line-height: 2rem;
   }
 }
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@layer utilities {
+  .card-hover {
+    @apply transition-[transform,box-shadow] duration-300 ease-out;
+  }
+  .card-hover:hover {
+    @apply -translate-y-0.5 shadow-xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+
+  .card-hover:hover {
+    transform: none;
+  }
+
+  .fade-in-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

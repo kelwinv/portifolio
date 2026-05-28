@@ -1,45 +1,74 @@
-import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Home from "app/page";
 
 describe("Home Page", () => {
-  it("renders the main heading", () => {
+  it("renders the hero heading", () => {
     render(<Home />);
     const heading = screen.getByRole("heading", {
-      name: /site em manutenção/i,
+      name: /kelwin vieira/i,
     });
     expect(heading).toBeInTheDocument();
   });
 
-  it("renders the maintenance image", () => {
+  it("renders main sections", () => {
     render(<Home />);
-    const image = screen.getByAltText("Picture of the author");
-    expect(image).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /sobre mim/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /números de impacto/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /projetos pessoais/i }),
+    ).toBeInTheDocument();
   });
 
-  it("renders the email contact link", () => {
+  it("renders Ver trajetória CTA", () => {
     render(<Home />);
-    const emailLink = screen.getByRole("link", {
-      name: /kelwin\.v\.goncalves@gmail\.com/i,
-    });
+    expect(
+      screen.getByRole("button", { name: /ver trajetória/i }),
+    ).toBeInTheDocument();
+  });
+
+  it("renders hero pitch", () => {
+    render(<Home />);
+    expect(
+      screen.getByText(/forte atuação em backend, cloud e entrega de features/i),
+    ).toBeInTheDocument();
+  });
+
+  it("renders link to all projects", () => {
+    render(<Home />);
+    const link = screen.getByRole("link", { name: /ver todos os projetos/i });
+    expect(link).toHaveAttribute("href", "/projetos");
+  });
+
+  it("renders the CV download link", () => {
+    render(<Home />);
+    const cvLink = screen.getByRole("link", { name: /baixar cv/i });
+    expect(cvLink).toHaveAttribute("href", "/cv/kelwin.vieira.pdf");
+  });
+
+  it("renders main contact links", () => {
+    render(<Home />);
+    const githubLinks = screen.getAllByRole("link", { name: /github/i });
+    expect(
+      githubLinks.some(
+        (a) => a.getAttribute("href") === "https://github.com/kelwinv",
+      ),
+    ).toBe(true);
+
+    const linkedinLinks = screen.getAllByRole("link", { name: /linkedin/i });
+    expect(
+      linkedinLinks.some(
+        (a) => a.getAttribute("href") === "https://linkedin.com/in/kelwinv",
+      ),
+    ).toBe(true);
+
+    const emailLink = screen.getByRole("link", { name: /e-mail/i });
     expect(emailLink).toHaveAttribute(
       "href",
       "mailto:kelwin.v.goncalves@gmail.com",
-    );
-  });
-
-  it("renders the GitHub link", () => {
-    render(<Home />);
-    const githubLink = screen.getByRole("link", { name: /github/i });
-    expect(githubLink).toHaveAttribute("href", "https://github.com/kelwinv");
-  });
-
-  it("renders the LinkedIn link", () => {
-    render(<Home />);
-    const linkedinLink = screen.getByRole("link", { name: /linkedin/i });
-    expect(linkedinLink).toHaveAttribute(
-      "href",
-      "https://linkedin.com/in/kelwinv",
     );
   });
 });

@@ -3,8 +3,9 @@ import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Vieira | Em Manutenção",
-  description: "Site em manutenção. Voltaremos em breve!",
+  title: "Kelwin Vieira | Desenvolvedor Full Stack",
+  description:
+    "Full Stack especializado em Node.js, AWS e APIs REST — sistemas escaláveis em produção.",
 };
 
 export default function RootLayout({
