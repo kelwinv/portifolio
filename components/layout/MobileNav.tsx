@@ -4,14 +4,8 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { X } from "lucide-react";
 
+import { NAV_ITEMS } from "@/lib/navigation";
 import { scrollToSection } from "@/lib/scroll";
-
-const NAV_ITEMS = [
-  { id: "sobre", label: "Sobre" },
-  { id: "experiencia", label: "Experiência" },
-  { id: "projetos", label: "Projetos" },
-  { id: "contato", label: "Contato" },
-] as const;
 
 type MobileNavProps = {
   open: boolean;

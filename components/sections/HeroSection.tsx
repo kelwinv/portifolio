@@ -1,26 +1,29 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { SiDocker, SiNodedotjs, SiTypescript } from "react-icons/si";
+import { useRef } from "react";
 
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { HeroPortrait } from "@/components/sections/HeroPortrait";
+import { HeroWaveBackground } from "@/components/sections/HeroWaveBackground";
 import { SITE_LINKS } from "@/lib/constants";
 import { scrollToSection } from "@/lib/scroll";
 
-const TECH_STACK = [
-  { Icon: SiTypescript, label: "TypeScript" },
-  { Icon: SiNodedotjs, label: "Node.js" },
-  { Icon: SiDocker, label: "Docker" },
-] as const;
-
 export function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const portraitRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section className="overflow-x-hidden bg-[#d0cce9] px-4 pt-0 pb-28 text-[#0f0d1d] sm:px-8">
+    <section
+      ref={sectionRef}
+      className="relative overflow-x-hidden bg-[#d0cce9] px-4 pt-0 pb-28 text-[#0f0d1d] sm:px-8"
+    >
+      <HeroWaveBackground sectionRef={sectionRef} portraitRef={portraitRef} />
+
       <SiteHeader variant="hero" />
 
-      <div className="mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mt-14 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
             <h1 className="font-['Montserrat:Bold',sans-serif] text-5xl leading-tight font-bold text-[#e62e62]">
@@ -85,56 +88,11 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative">
-            <div
-              className="animate-float absolute -top-4 -right-2 z-10 hidden rounded-2xl border border-[#e62e62]/20 bg-[#0f0d1d]/90 px-4 py-3 shadow-lg backdrop-blur-sm sm:block"
-              aria-hidden
-            >
-              <div className="flex items-center gap-3">
-                {TECH_STACK.map(({ Icon, label }) => (
-                  <span
-                    key={label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ebe8ff]/10 text-[#ebe8ff]"
-                    title={label}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div
-              className="animate-float absolute -bottom-6 -left-4 h-24 w-24 rounded-full bg-[#e62e62]/20 blur-2xl"
-              aria-hidden
-              style={{ animationDelay: "1.5s" }}
-            />
-
-            <div className="rounded-[28px] border border-[#ebe8ff]/10 bg-[#0f0d1d]/80 p-2 shadow-xl">
-              <Image
-                src="/profile.png"
-                alt="Kelwin Vieira - Desenvolvedor Full Stack"
-                width={720}
-                height={720}
-                priority
-                className="h-auto w-full rounded-[22px] object-cover"
-                sizes="(min-width: 1024px) 520px, 100vw"
-              />
-            </div>
-
-            <div
-              className="mt-4 flex justify-center gap-3 sm:hidden"
-              aria-label="Stack principal"
-            >
-              {TECH_STACK.map(({ Icon, label }) => (
-                <span
-                  key={label}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0f0d1d]/80 text-[#ebe8ff]"
-                  title={label}
-                >
-                  <Icon className="h-5 w-5" />
-                </span>
-              ))}
-            </div>
+          <div
+            ref={portraitRef}
+            className="relative z-10 hidden lg:flex lg:justify-center"
+          >
+            <HeroPortrait />
           </div>
         </div>
       </div>

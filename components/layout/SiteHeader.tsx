@@ -5,15 +5,10 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 
+import { HeroDesktopNav } from "@/components/layout/HeroDesktopNav";
 import { MobileNav } from "@/components/layout/MobileNav";
-import { scrollToSection } from "@/lib/scroll";
-
-const NAV_ITEMS = [
-  { id: "sobre", label: "Sobre" },
-  { id: "experiencia", label: "Experiência" },
-  { id: "projetos", label: "Projetos" },
-  { id: "contato", label: "Contato" },
-] as const;
+import { useHeaderVisibility } from "@/lib/hooks/useHeaderVisibility";
+import { NAV_ITEMS } from "@/lib/navigation";
 
 type SiteHeaderProps = {
   variant?: "hero" | "page";
@@ -22,43 +17,35 @@ type SiteHeaderProps = {
 export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const isHero = variant === "hero";
+  const headerVisible = useHeaderVisibility(menuOpen);
 
   return (
     <>
       <header
-        className={`sticky top-0 z-50 ${
+        className={`fixed top-0 left-0 z-50 w-screen rounded-b-2xl transition-transform duration-300 ease-out motion-reduce:transition-none ${
+          headerVisible ? "translate-y-0" : "-translate-y-full"
+        } ${
           isHero
-            ? "bg-[#d0cce9]/95 backdrop-blur-sm"
+            ? "bg-[#d0cce9]/20 backdrop-blur-sm"
             : "border-b border-[#ebe8ff] bg-white/95 backdrop-blur-sm"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-8">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="Kelwin Vieira" width={44} height={44} />
-            <span
-              className={`font-['Montserrat:Bold',sans-serif] text-lg font-bold ${
-                isHero ? "text-[#0f0d1d]" : "text-[#0f0d1d]"
-              }`}
-            >
+            <span className="font-['Montserrat:Bold',sans-serif] text-lg font-bold text-[#0f0d1d]">
               Kelwin Vieira
             </span>
           </Link>
 
-          <nav
-            className="hidden items-center gap-6 font-['Poppins:Regular',sans-serif] text-base md:flex"
-            aria-label="Principal"
-          >
-            {NAV_ITEMS.map((item) =>
-              isHero ? (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-[#0f0d1d] transition-opacity hover:opacity-70"
-                >
-                  {item.label}
-                </button>
-              ) : (
+          {isHero ? (
+            <HeroDesktopNav />
+          ) : (
+            <nav
+              className="z-52 hidden items-center gap-6 font-['Poppins:Regular',sans-serif] text-base md:flex"
+              aria-label="Principal"
+            >
+              {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.id}
                   href={`/#${item.id}`}
@@ -66,17 +53,15 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
                 >
                   {item.label}
                 </Link>
-              ),
-            )}
-            {!isHero && (
+              ))}
               <Link
                 href="/projetos"
                 className="text-[#e62e62] transition-opacity hover:opacity-70"
               >
                 Todos os projetos
               </Link>
-            )}
-          </nav>
+            </nav>
+          )}
 
           <button
             type="button"

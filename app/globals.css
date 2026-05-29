@@ -88,6 +88,30 @@ h6 {
   animation: float 6s ease-in-out infinite;
 }
 
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.hero-portrait {
+  --parallax-x: 0;
+  --parallax-y: 0;
+}
+
+.parallax-layer {
+  transform: translate3d(
+    calc(var(--parallax-x, 0) * var(--parallax-strength, 0) * 1px),
+    calc(var(--parallax-y, 0) * var(--parallax-strength, 0) * 1px),
+    0
+  );
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
 @layer utilities {
   .card-hover {
     @apply transition-[transform,box-shadow] duration-300 ease-out;
@@ -98,8 +122,20 @@ h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-float {
+  .animate-float,
+  .animate-float-slow,
+  .animate-float-delayed {
     animation: none;
+  }
+
+  .parallax-layer {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-portrait {
+    --parallax-x: 0;
+    --parallax-y: 0;
   }
 
   .card-hover:hover {

@@ -9,6 +9,16 @@ describe("Portfolio home", () => {
     cy.get("#sobre").should("exist");
   });
 
+  it("should highlight Sobre in desktop nav and update hash", () => {
+    cy.viewport(1280, 800);
+    cy.get('nav[aria-label="Principal"]').contains("button", "Sobre").click();
+    cy.location("hash").should("eq", "#sobre");
+    cy.get('nav[aria-label="Principal"] button[aria-current="true"]').should(
+      "contain",
+      "Sobre",
+    );
+  });
+
   it("should open mobile menu on small viewport", () => {
     cy.viewport(375, 667);
     cy.get('button[aria-label="Abrir menu"]').click();
