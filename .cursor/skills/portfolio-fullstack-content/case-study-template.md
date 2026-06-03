@@ -22,7 +22,7 @@ export type CorporateProject = {
 
 ## Template de preenchimento (copiar por case)
 
-### Case: ******\_\_\_******
+### Case: **\*\***\_\_\_**\*\***
 
 **Empresa (público):**  
 **Nome do sistema (card):**
