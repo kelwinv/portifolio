@@ -4,12 +4,12 @@ Usar após implementar nav e ajustes responsivos da skill `portfolio-ui-polish`.
 
 ## Breakpoints (Tailwind padrão)
 
-| Token | Largura | Foco |
-| ----- | ------- | ---- |
-| default | < 640px | Mobile portrait |
-| `sm` | 640px | Mobile landscape / phablet |
-| `md` | 768px | Tablet — nav desktop pode aparecer |
-| `lg` | 1024px | Desktop — hero 2 colunas |
+| Token   | Largura | Foco                               |
+| ------- | ------- | ---------------------------------- |
+| default | < 640px | Mobile portrait                    |
+| `sm`    | 640px   | Mobile landscape / phablet         |
+| `md`    | 768px   | Tablet — nav desktop pode aparecer |
+| `lg`    | 1024px  | Desktop — hero 2 colunas           |
 
 Testar pelo menos **375px** e **768px**.
 

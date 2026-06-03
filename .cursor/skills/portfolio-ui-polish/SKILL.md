@@ -23,11 +23,11 @@ Melhorar **apresentação visual e usabilidade mobile** sem alterar a estratégi
 
 ## Decisões visuais (defaults do candidato)
 
-| Item | Escolha |
-| ---- | ------- |
-| Paleta | Manter roxo/rosa atual |
-| Animações | Sutis (fade-in scroll, hover, decorações estáticas na foto) |
-| Referência | Layout, ritmo de seções, hero decorado, responsividade |
+| Item       | Escolha                                                          |
+| ---------- | ---------------------------------------------------------------- |
+| Paleta     | Manter roxo/rosa atual                                           |
+| Animações  | Sutis (fade-in scroll, hover, decorações estáticas na foto)      |
+| Referência | Layout, ritmo de seções, hero decorado, responsividade           |
 | Mobile nav | Sticky header + menu hamburger/drawer (proposta padrão da skill) |
 
 ## Regras
@@ -57,15 +57,15 @@ Ler [`visual-questionnaire.md`](visual-questionnaire.md) e [`reference-patterns.
 
 ### Passo 3 — Implementação (prioridade)
 
-| Prioridade | Item | Referência |
-| ---------- | ---- | ---------- |
-| P0 | Header sticky + hamburger mobile | [`mobile-checklist.md`](mobile-checklist.md) |
-| P0 | Hero: foto + decorações (blur/formas) | [`reference-patterns.md`](reference-patterns.md) |
-| P1 | Experience timeline single-column mobile | `ExperienceSection.tsx` |
-| P1 | Fade-in sutíl em seções | [`animation-guidelines.md`](animation-guidelines.md) |
-| P2 | Ritmo vertical / separadores entre seções | globals + seções |
-| P2 | Hover refinado em cards | Corporate, Skills, Differentials |
-| P3 | Touch targets ≥ 44px em filtros e CTAs | `PersonalProjectsSection.tsx` |
+| Prioridade | Item                                      | Referência                                           |
+| ---------- | ----------------------------------------- | ---------------------------------------------------- |
+| P0         | Header sticky + hamburger mobile          | [`mobile-checklist.md`](mobile-checklist.md)         |
+| P0         | Hero: foto + decorações (blur/formas)     | [`reference-patterns.md`](reference-patterns.md)     |
+| P1         | Experience timeline single-column mobile  | `ExperienceSection.tsx`                              |
+| P1         | Fade-in sutíl em seções                   | [`animation-guidelines.md`](animation-guidelines.md) |
+| P2         | Ritmo vertical / separadores entre seções | globals + seções                                     |
+| P2         | Hover refinado em cards                   | Corporate, Skills, Differentials                     |
+| P3         | Touch targets ≥ 44px em filtros e CTAs    | `PersonalProjectsSection.tsx`                        |
 
 ### Passo 4 — Componentes novos (se necessário)
 

@@ -38,12 +38,12 @@ Coletar informações do candidato via **questionário obrigatório**, depois im
 
 ## Defaults (se o usuário já respondeu na conversa)
 
-| Item | Default acordado |
-| ---- | ---------------- |
-| Tom hero | Profissional, sem emojis |
-| Cases a expandir | iFollow + Grupo Prime |
+| Item             | Default acordado             |
+| ---------------- | ---------------------------- |
+| Tom hero         | Profissional, sem emojis     |
+| Cases a expandir | iFollow + Grupo Prime        |
 | Projetos no site | 3–5 curados via questionário |
-| Ênfase | Backend + infra |
+| Ênfase           | Backend + infra              |
 
 Registrar no chat quais defaults foram aplicados vs. respostas novas.
 
@@ -70,15 +70,15 @@ Paths obrigatórios:
 
 ### Passo 3 — Implementação
 
-| Área | Ação |
-| ---- | ---- |
-| Hero | Tom profissional; TypeScript (não Javascript); CTA acordado; elevator pitch backend/infra |
-| About + metadata | Keywords full stack: AWS, REST, Docker, CI/CD, microsserviços, PostgreSQL |
-| Cases iFollow + Grupo Prime | Expandir com [`case-study-template.md`](case-study-template.md) |
-| Projetos pessoais | Curar lista ou adicionar `featured: true`; corrigir links; remover demos mortas |
-| Experience | Reforçar bullets backend/infra se respostas indicarem |
-| README | Remover menção a "manutenção"; descrever portfólio completo |
-| Testes | Atualizar asserts de CTA e headings |
+| Área                        | Ação                                                                                      |
+| --------------------------- | ----------------------------------------------------------------------------------------- |
+| Hero                        | Tom profissional; TypeScript (não Javascript); CTA acordado; elevator pitch backend/infra |
+| About + metadata            | Keywords full stack: AWS, REST, Docker, CI/CD, microsserviços, PostgreSQL                 |
+| Cases iFollow + Grupo Prime | Expandir com [`case-study-template.md`](case-study-template.md)                           |
+| Projetos pessoais           | Curar lista ou adicionar `featured: true`; corrigir links; remover demos mortas           |
+| Experience                  | Reforçar bullets backend/infra se respostas indicarem                                     |
+| README                      | Remover menção a "manutenção"; descrever portfólio completo                               |
+| Testes                      | Atualizar asserts de CTA e headings                                                       |
 
 ### Passo 4 — Checklist pós-edição
 
@@ -94,15 +94,15 @@ Reportar falhas e corrigir.
 
 ## Mapeamento feedback recruiter review → ação
 
-| Feedback | Ação |
-| -------- | ---- |
-| Hero informal (emojis, INICIAR) | Hero profissional + novo CTA |
-| Javascript vs TypeScript | Unificar TypeScript no hero |
-| 14 projetos diluem mensagem | Curadoria 3–5 + link "Mais no GitHub" opcional |
-| Link Randomizador → Game-list | Corrigir `github` em `projectsApi.ts` |
-| Demo Heroku morta | Remover `project` URL após confirmação |
-| Cases superficiais | Expandir iFollow + Grupo Prime |
-| README desatualizado | Atualizar README |
+| Feedback                        | Ação                                           |
+| ------------------------------- | ---------------------------------------------- |
+| Hero informal (emojis, INICIAR) | Hero profissional + novo CTA                   |
+| Javascript vs TypeScript        | Unificar TypeScript no hero                    |
+| 14 projetos diluem mensagem     | Curadoria 3–5 + link "Mais no GitHub" opcional |
+| Link Randomizador → Game-list   | Corrigir `github` em `projectsApi.ts`          |
+| Demo Heroku morta               | Remover `project` URL após confirmação         |
+| Cases superficiais              | Expandir iFollow + Grupo Prime                 |
+| README desatualizado            | Atualizar README                               |
 
 ## Curadoria técnica (projectsApi)
 

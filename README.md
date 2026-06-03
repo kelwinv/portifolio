@@ -36,12 +36,12 @@ Skills do projeto em `.cursor/skills/` para planejar, avaliar e melhorar o portf
 migrate-figma-portfolio (plano) → portfolio-fullstack-content → portfolio-ui-polish → portfolio-recruiter-review
 ```
 
-| Skill | Propósito | Como invocar |
-| ----- | --------- | ------------ |
-| **migrate-figma-portfolio** | Plano de migração do `portifolio-gerado` para este repo | `aplicar migrate-figma-portfolio` |
-| **portfolio-fullstack-content** | Questionário + copy full stack (backend/infra), cases iFollow/Grupo Prime, curadoria de projetos | `aplicar portfolio-fullstack-content` |
-| **portfolio-ui-polish** | UI: hero decorado, mobile nav, animações sutis, referência [figma-conversion](https://figma-conversion.vercel.app/services) | `aplicar portfolio-ui-polish` (após conteúdo) |
-| **portfolio-recruiter-review** | 3 avaliações de recrutadores + síntese comparativa | `aplicar portfolio-recruiter-review` |
+| Skill                           | Propósito                                                                                                                   | Como invocar                                  |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| **migrate-figma-portfolio**     | Plano de migração do `portifolio-gerado` para este repo                                                                     | `aplicar migrate-figma-portfolio`             |
+| **portfolio-fullstack-content** | Questionário + copy full stack (backend/infra), cases iFollow/Grupo Prime, curadoria de projetos                            | `aplicar portfolio-fullstack-content`         |
+| **portfolio-ui-polish**         | UI: hero decorado, mobile nav, animações sutis, referência [figma-conversion](https://figma-conversion.vercel.app/services) | `aplicar portfolio-ui-polish` (após conteúdo) |
+| **portfolio-recruiter-review**  | 3 avaliações de recrutadores + síntese comparativa                                                                          | `aplicar portfolio-recruiter-review`          |
 
 ### Detalhes
 

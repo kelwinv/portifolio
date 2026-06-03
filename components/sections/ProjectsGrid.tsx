@@ -112,11 +112,7 @@ function ProjectCard({ project }: { project: projectInfoType }) {
 
         <div className="mt-6 flex gap-3">
           {project.project && (
-            <Button
-              variant="primary-sm"
-              href={project.project}
-              external
-            >
+            <Button variant="primary-sm" href={project.project} external>
               Ver projeto
             </Button>
           )}

@@ -8,16 +8,16 @@ Referência: [figma-conversion.vercel.app/services](https://figma-conversion.ver
 
 ## O que extrair da referência
 
-| Padrão | Descrição | Adaptação no portfólio |
-| ------ | --------- | ---------------------- |
-| Hero split | Texto à esquerda, visual à direita com personagem/ilustração | Grid `lg:grid-cols-2` já existe; enriquecer lado da foto |
-| Decorações no hero | Formas, blobs ou elementos atrás da imagem principal | `absolute` divs com `blur-3xl`, círculos `rounded-full`, opacidade baixa |
-| Hierarquia tipográfica | Título grande, subtítulo, parágrafo de apoio, CTAs separados | Manter h1 rosa; revisar spacing `mt-*` |
-| Ritmo vertical | Muito whitespace entre seções | `py-24` → `py-28` ou `py-32` onde couber; opcional `border-t border-[#ebe8ff]/50` |
-| Cards em grid | Cards uniformes, hover sutil, título + corpo + ação | Corporate, Skills, Differentials, projetos pessoais |
-| Header fixo | Nav sempre visível ao rolar | `sticky top-0 z-50 backdrop-blur bg-[#d0cce9]/90` |
-| CTA contrastante | Botão primário sólido + secundário outline | Já usa rosa `#e62e62`; manter |
-| Footer enxuto | Links + copyright | `ContactSection` — alinhar padding com seções acima |
+| Padrão                 | Descrição                                                    | Adaptação no portfólio                                                            |
+| ---------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| Hero split             | Texto à esquerda, visual à direita com personagem/ilustração | Grid `lg:grid-cols-2` já existe; enriquecer lado da foto                          |
+| Decorações no hero     | Formas, blobs ou elementos atrás da imagem principal         | `absolute` divs com `blur-3xl`, círculos `rounded-full`, opacidade baixa          |
+| Hierarquia tipográfica | Título grande, subtítulo, parágrafo de apoio, CTAs separados | Manter h1 rosa; revisar spacing `mt-*`                                            |
+| Ritmo vertical         | Muito whitespace entre seções                                | `py-24` → `py-28` ou `py-32` onde couber; opcional `border-t border-[#ebe8ff]/50` |
+| Cards em grid          | Cards uniformes, hover sutil, título + corpo + ação          | Corporate, Skills, Differentials, projetos pessoais                               |
+| Header fixo            | Nav sempre visível ao rolar                                  | `sticky top-0 z-50 backdrop-blur bg-[#d0cce9]/90`                                 |
+| CTA contrastante       | Botão primário sólido + secundário outline                   | Já usa rosa `#e62e62`; manter                                                     |
+| Footer enxuto          | Links + copyright                                            | `ContactSection` — alinhar padding com seções acima                               |
 
 ---
 

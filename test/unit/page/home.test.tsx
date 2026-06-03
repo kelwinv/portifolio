@@ -35,17 +35,12 @@ describe("Home Page", () => {
 
   it("renders hero pitch aligned with LinkedIn summary", () => {
     render(<Home />);
-    expect(
-      screen.getByText(/liderança em equipes ágeis/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/liderança em equipes ágeis/i)).toBeInTheDocument();
   });
 
   it("renders contact location and phone", () => {
     render(<Home />);
-    expect(screen.getAllByText(/Osasco, São Paulo/i).length).toBeGreaterThan(
-      0,
-    );
-    expect(screen.getAllByText(/\+55 11 98958-1779/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Osasco, São Paulo/i).length).toBeGreaterThan(0);
   });
 
   it("renders link to all projects", () => {

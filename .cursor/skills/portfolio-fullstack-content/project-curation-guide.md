@@ -6,11 +6,11 @@ Objetivo: reduzir ruído (feedback recruiter: 14 projetos diluem a mensagem) man
 
 Para cada projeto, classificar:
 
-| Classificação | Significado | Ação no site |
-| ------------- | ----------- | ------------ |
-| **Destacar** | Representa bem full stack ou backend; demo viva ou código sólido | Exibir no grid principal |
-| **Manter** | Ok mostrar, mas não é destaque | Exibir se sobrar vaga (< 5 total) |
-| **Arquivar** | Bootcamp antigo, CSS challenge, demo morta, link errado | Remover do grid ou só GitHub geral |
+| Classificação | Significado                                                      | Ação no site                       |
+| ------------- | ---------------------------------------------------------------- | ---------------------------------- |
+| **Destacar**  | Representa bem full stack ou backend; demo viva ou código sólido | Exibir no grid principal           |
+| **Manter**    | Ok mostrar, mas não é destaque                                   | Exibir se sobrar vaga (< 5 total)  |
+| **Arquivar**  | Bootcamp antigo, CSS challenge, demo morta, link errado          | Remover do grid ou só GitHub geral |
 
 ## Perguntas por projeto (usar com o candidato)
 
@@ -21,22 +21,22 @@ Para cada projeto, classificar:
 
 ## Inventário atual (`projectsApi.ts`)
 
-| # | Nome | GitHub | Demo | Notas para triagem |
-| - | ---- | ------ | ---- | ------------------ |
-| 1 | hollowKnight site | kelwinv/hollow-knight-scss | GitHub Pages | Design/CSS; provável arquivar |
-| 2 | nlw04-node | kelwinv/nlw04-node | — | Backend NLW; considerar se ainda relevante |
-| 3 | moveit | kelwinv/moveit | nextmoveit.vercel.app | Next.js; candidato a destacar |
-| 4 | dev list | kelwinv/dev-list | dev-list.vercel.app | Full stack UI; avaliar vs dev-list-server |
-| 5 | dev list server | kelwinv/dev-list-server | — | **Backend + PostgreSQL**; forte para full stack |
-| 6 | chat com socket.io | kelwinv/chat-com-socket.io | — | Real-time Node; candidato a destacar |
-| 7 | among Us css | kelwinv/amongUs-css-drawing | GitHub Pages | CSS challenge; provável arquivar |
-| 8 | Ecoleta | kelwinv/NLW-Booster | — | NLW full stack |
-| 9 | be the hero | kelwinv/semanaOminiStack11 | — | NLW full stack |
-| 10 | Game List | kelwinv/Game-list | — | TypeScript + PostgreSQL |
-| 11 | Randomizador de texto | kelwinv/Game-list (**link errado**) | Heroku (verificar) | **Corrigir github**; demo provavelmente morta |
-| 12 | Happy | kelwinv/NextLevelWeek3 | — | NLW3 |
-| 13 | Proffy | kelwinv/nextlevelweek02 | — | NLW2 |
-| 14 | letmeask | kelwinv/nlw06-letmeask | Firebase hosting | React + Firebase |
+| #   | Nome                  | GitHub                              | Demo                  | Notas para triagem                              |
+| --- | --------------------- | ----------------------------------- | --------------------- | ----------------------------------------------- |
+| 1   | hollowKnight site     | kelwinv/hollow-knight-scss          | GitHub Pages          | Design/CSS; provável arquivar                   |
+| 2   | nlw04-node            | kelwinv/nlw04-node                  | —                     | Backend NLW; considerar se ainda relevante      |
+| 3   | moveit                | kelwinv/moveit                      | nextmoveit.vercel.app | Next.js; candidato a destacar                   |
+| 4   | dev list              | kelwinv/dev-list                    | dev-list.vercel.app   | Full stack UI; avaliar vs dev-list-server       |
+| 5   | dev list server       | kelwinv/dev-list-server             | —                     | **Backend + PostgreSQL**; forte para full stack |
+| 6   | chat com socket.io    | kelwinv/chat-com-socket.io          | —                     | Real-time Node; candidato a destacar            |
+| 7   | among Us css          | kelwinv/amongUs-css-drawing         | GitHub Pages          | CSS challenge; provável arquivar                |
+| 8   | Ecoleta               | kelwinv/NLW-Booster                 | —                     | NLW full stack                                  |
+| 9   | be the hero           | kelwinv/semanaOminiStack11          | —                     | NLW full stack                                  |
+| 10  | Game List             | kelwinv/Game-list                   | —                     | TypeScript + PostgreSQL                         |
+| 11  | Randomizador de texto | kelwinv/Game-list (**link errado**) | Heroku (verificar)    | **Corrigir github**; demo provavelmente morta   |
+| 12  | Happy                 | kelwinv/NextLevelWeek3              | —                     | NLW3                                            |
+| 13  | Proffy                | kelwinv/nextlevelweek02             | —                     | NLW2                                            |
+| 14  | letmeask              | kelwinv/nlw06-letmeask              | Firebase hosting      | React + Firebase                                |
 
 ## Recomendação inicial (agente — não aplicar sem confirmação)
 

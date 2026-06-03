@@ -15,7 +15,15 @@ export const corporateProjects: CorporateProject[] = [
     company: "iFollow Brasil",
     description:
       "Desenvolvimento full stack com foco em interfaces responsivas, APIs REST e qualidade via testes automatizados.",
-    stack: ["React", "Next.js", "Node.js", "NestJS", "MySQL", "PostgreSQL", "Jest"],
+    stack: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "NestJS",
+      "MySQL",
+      "PostgreSQL",
+      "Jest",
+    ],
     problem:
       "Necessidade de evoluir produtos web e backends com consistência e cobertura de testes.",
     technicalDecision:
@@ -28,7 +36,17 @@ export const corporateProjects: CorporateProject[] = [
     company: "Grupo Prime",
     description:
       "Sistemas internos com APIs REST, bancos relacionais e operação em servidores Linux.",
-    stack: ["React", "Next.js", "NestJS", "MySQL", "MariaDB", "Docker", "PM2", "Nginx", "Python"],
+    stack: [
+      "React",
+      "Next.js",
+      "NestJS",
+      "MySQL",
+      "MariaDB",
+      "Docker",
+      "PM2",
+      "Nginx",
+      "Python",
+    ],
     problem:
       "Manter várias aplicações em produção com deploy previsível e automações de processo.",
     technicalDecision:

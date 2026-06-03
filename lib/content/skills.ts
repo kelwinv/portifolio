@@ -17,11 +17,24 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Backend",
-    skills: ["Node.js", "NestJS", "Express", "REST APIs", "Microsserviços", "PHP"],
+    skills: [
+      "Node.js",
+      "NestJS",
+      "Express",
+      "REST APIs",
+      "Microsserviços",
+      "PHP",
+    ],
   },
   {
     title: "Infraestrutura",
-    skills: ["AWS (S3, ElastiCache, Lambda, EC2)", "Docker", "Nginx", "PM2", "Linux"],
+    skills: [
+      "AWS (S3, ElastiCache, Lambda, EC2)",
+      "Docker",
+      "Nginx",
+      "PM2",
+      "Linux",
+    ],
   },
   {
     title: "Banco de Dados",
