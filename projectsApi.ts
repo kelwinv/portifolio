@@ -14,18 +14,18 @@ import {
 } from "react-icons/si";
 import { DiSqllite } from "react-icons/di";
 
-import hollowKnightImg from "@/public/img/hollow-knight.png";
-import nodeImg from "@/public/img/node.jpg";
-import nlw4Img from "@/public/img/nlw4.png";
-import devListImg from "@/public/img/dev-list.png";
-import chatComSocketImg from "@/public/img/chat-com-socket.png";
-import amongUsImg from "@/public/img/among-us.jpeg";
-import ecoletaImg from "@/public/img/ecoleta.png";
-import beTheHeroImg from "@/public/img/be-the-hero.png";
-import gameListImg from "@/public/img/game-list.png";
-import randomizadorImg from "@/public/img/randomizador.png";
-import happyVideo from "@/public/img/happyvideo.gif";
-import proffyImg from "@/public/img/proffy.png";
+import hollowKnightImg from "public/img/hollow-knight.png";
+import nodeImg from "public/img/node.jpg";
+import nlw4Img from "public/img/nlw4.png";
+import devListImg from "public/img/dev-list.png";
+import chatComSocketImg from "public/img/chat-com-socket.png";
+import amongUsImg from "public/img/among-us.jpeg";
+import ecoletaImg from "public/img/ecoleta.png";
+import beTheHeroImg from "public/img/be-the-hero.png";
+import gameListImg from "public/img/game-list.png";
+import randomizadorImg from "public/img/randomizador.png";
+import happyVideo from "public/img/happyvideo.gif";
+import proffyImg from "public/img/proffy.png";
 import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
@@ -37,7 +37,6 @@ export type projectInfoType = {
   project?: string;
   tecs: IconType[];
   tag: string;
-  featured?: boolean;
 };
 
 const projectsInfo: projectInfoType[] = [
@@ -49,7 +48,6 @@ const projectsInfo: projectInfoType[] = [
     project: "https://kelwinv.github.io/hollow-knight-scss",
     tecs: [SiSass, SiJavascript, SiHtml5, SiCss3],
     tag: "design",
-    featured: false,
   },
   {
     imgUrl: nodeImg,
@@ -58,7 +56,6 @@ const projectsInfo: projectInfoType[] = [
     github: "https://github.com/kelwinv/nlw04-node",
     tecs: [SiTypescript, SiNodedotjs, DiSqllite],
     tag: "code",
-    featured: false,
   },
   {
     imgUrl: nlw4Img,
@@ -69,7 +66,6 @@ const projectsInfo: projectInfoType[] = [
     project: "https://nextmoveit.vercel.app",
     tecs: [SiTypescript, SiNextdotjs],
     tag: "design",
-    featured: true,
   },
   {
     imgUrl: devListImg,
@@ -80,7 +76,6 @@ const projectsInfo: projectInfoType[] = [
     project: "https://dev-list.vercel.app",
     tecs: [SiTypescript, SiReact, SiStyledcomponents],
     tag: "design",
-    featured: false,
   },
   {
     imgUrl: devListImg,
@@ -90,7 +85,6 @@ const projectsInfo: projectInfoType[] = [
     github: "https://github.com/kelwinv/dev-list-server",
     tecs: [SiTypescript, SiNodedotjs, SiPostgresql],
     tag: "code",
-    featured: true,
   },
   {
     imgUrl: chatComSocketImg,
@@ -105,7 +99,6 @@ const projectsInfo: projectInfoType[] = [
       SiStyledcomponents,
     ],
     tag: "all",
-    featured: true,
   },
 
   {
@@ -116,7 +109,6 @@ const projectsInfo: projectInfoType[] = [
     project: "https://kelwinv.github.io/amongUs-css-drawing/",
     tecs: [SiHtml5, SiCss3],
     tag: "design",
-    featured: false,
   },
   {
     imgUrl: ecoletaImg,
@@ -126,7 +118,6 @@ const projectsInfo: projectInfoType[] = [
     github: "https://github.com/kelwinv/NLW-Booster",
     tecs: [SiTypescript, DiSqllite, SiNodedotjs, SiReact],
     tag: "all",
-    featured: false,
   },
   {
     imgUrl: beTheHeroImg,
@@ -136,7 +127,6 @@ const projectsInfo: projectInfoType[] = [
     github: "https://github.com/kelwinv/semanaOminiStack11",
     tecs: [SiJavascript, DiSqllite, SiNodedotjs, SiReact],
     tag: "all",
-    featured: false,
   },
   {
     imgUrl: gameListImg,
@@ -145,18 +135,16 @@ const projectsInfo: projectInfoType[] = [
     github: "https://github.com/kelwinv/Game-list",
     tecs: [SiTypescript, SiPostgresql, SiReact, SiStyledcomponents],
     tag: "all",
-    featured: true,
   },
   {
     imgUrl: randomizadorImg,
     name: "Randomizador de texto",
     about:
       "permite que você escolha uma palavra que retornara as letras embaralhadas ",
-    github: "https://github.com/kelwinv/randomizador-de-texto",
+    github: "https://github.com/kelwinv/Game-list",
     project: "https://randomizador-de-texto.herokuapp.com/",
     tecs: [SiTypescript, SiReact, SiStyledcomponents],
     tag: "design",
-    featured: false,
   },
   {
     imgUrl: happyVideo,
@@ -165,7 +153,6 @@ const projectsInfo: projectInfoType[] = [
     github: "https://github.com/kelwinv/NextLevelWeek3",
     tecs: [SiTypescript, SiNodedotjs, DiSqllite, SiReact],
     tag: "all",
-    featured: false,
   },
   {
     imgUrl: proffyImg,
@@ -174,7 +161,6 @@ const projectsInfo: projectInfoType[] = [
     github: "https://github.com/kelwinv/nextlevelweek02",
     tecs: [SiTypescript, SiNodedotjs, DiSqllite, SiReact],
     tag: "all",
-    featured: false,
   },
   {
     imgUrl:
@@ -186,7 +172,6 @@ const projectsInfo: projectInfoType[] = [
     project: "https://nlw06letmeask.web.app",
     tecs: [SiTypescript, SiFirebase, SiReact],
     tag: "code",
-    featured: true,
   },
 ];
 
