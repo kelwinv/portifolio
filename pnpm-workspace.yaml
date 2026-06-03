@@ -1,4 +1,4 @@
 allowBuilds:
-  "@vercel/speed-insights": true
-  cypress: true
-  sharp: true
+  '@vercel/speed-insights': set this to true or false
+  cypress: set this to true or false
+  sharp: set this to true or false
