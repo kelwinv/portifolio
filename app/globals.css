@@ -3,13 +3,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #d0cce9;
-  --color-foreground: #171717;
+  --color-background: #f5f5fa;
+  --color-foreground: #0f0d1d;
   --color-navy: #0f0d1d;
   --color-navy-light: #16132a;
   --color-pink: #e62e62;
+  --color-pink-dark: #450e1e;
   --color-pink-light: #f15681;
   --color-light: #ebe8ff;
+  --color-gray-muted: #d0cce9;
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 }
@@ -20,15 +22,10 @@
   --navy: var(--color-navy);
   --navy-light: var(--color-navy-light);
   --pink: var(--color-pink);
+  --pink-dark: var(--color-pink-dark);
   --pink-light: var(--color-pink-light);
   --light: var(--color-light);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: linear-gradient(180deg, #0f0d1d 0%, #16132a 32%);
-    --foreground: var(--light);
-  }
+  --gray-muted: var(--color-gray-muted);
 }
 
 body {
@@ -71,5 +68,80 @@ h6 {
   .subtitle {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.hero-portrait {
+  --parallax-x: 0;
+  --parallax-y: 0;
+}
+
+.parallax-layer {
+  transform: translate3d(
+    calc(var(--parallax-x, 0) * var(--parallax-strength, 0) * 1px),
+    calc(var(--parallax-y, 0) * var(--parallax-strength, 0) * 1px),
+    0
+  );
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+@layer utilities {
+  .card-hover {
+    @apply transition-[transform,box-shadow] duration-300 ease-out;
+  }
+  .card-hover:hover {
+    @apply -translate-y-0.5 shadow-xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow,
+  .animate-float-delayed {
+    animation: none;
+  }
+
+  .parallax-layer {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-portrait {
+    --parallax-x: 0;
+    --parallax-y: 0;
+  }
+
+  .card-hover:hover {
+    transform: none;
+  }
+
+  .fade-in-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
