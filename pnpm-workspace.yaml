@@ -1,0 +1,4 @@
+allowBuilds:
+  "@vercel/speed-insights": true
+  cypress: true
+  sharp: true
