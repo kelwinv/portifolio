@@ -58,7 +58,6 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@vercel/speed-insights",
       "cypress",
       "sharp"
     ]
