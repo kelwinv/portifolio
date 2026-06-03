@@ -1,4 +1,8 @@
+import { getYearsOfExperience } from "@/lib/constants";
+
 export function AboutSection() {
+  const years = getYearsOfExperience();
+
   return (
     <section id="sobre" className="bg-white px-4 py-28 sm:px-8">
       <div className="mx-auto max-w-6xl">
@@ -8,17 +12,16 @@ export function AboutSection() {
         <div className="space-y-6 font-['Poppins:Regular',sans-serif] text-xl leading-relaxed text-[#3e3b53]">
           <p>
             Desenvolvedor Full Stack com{" "}
-            <strong>mais de 4 anos de experiência</strong> construindo APIs
-            REST, serviços em Node.js e infraestrutura em AWS — com entrega
-            ponta a ponta, do desenho da solução ao deploy em produção com
-            Docker e CI/CD.
+            <strong>{years}+ anos de experiência</strong> em startups e médias
+            empresas (desde 2021), transformando desafios complexos em soluções
+            escaláveis. Atuo em front-end e back-end, participando de equipes
+            ágeis com foco em qualidade, inovação e redução de custos.
           </p>
           <p>
-            Atuo com foco em{" "}
-            <strong>backend, cloud e impacto de negócio</strong>:
-            microsserviços, processamento de dados em escala e interfaces que
-            traduzem operações complexas em produto claro para o time e para o
-            cliente.
+            Especializado em <strong>React, Next.js, Node.js e Nest.js</strong>,
+            com entrega em cloud (AWS, Docker, Nginx) e APIs REST. Busco impacto
+            de negócio real — da otimização operacional à mentoria técnica em
+            times em crescimento.
           </p>
         </div>
       </div>

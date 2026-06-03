@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { useRef } from "react";
 
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { HeroPortrait } from "@/components/sections/HeroPortrait";
 import { HeroWaveBackground } from "@/components/sections/HeroWaveBackground";
-import { SITE_LINKS } from "@/lib/constants";
+import { Button } from "@/components/ui/Button";
+import { SITE_CONTACT, SITE_LINKS } from "@/lib/constants";
 import { scrollToSection } from "@/lib/scroll";
 
 export function HeroSection() {
@@ -33,30 +33,37 @@ export function HeroSection() {
               Desenvolvedor Full Stack
             </p>
             <p className="mt-2 font-['Poppins:Medium',sans-serif] text-base tracking-wide text-[#3e3b53]">
-              TypeScript · Node.js · Docker
+              TypeScript · React · Next.js · Node.js · Nest.js
             </p>
 
-            <p className="mt-10 max-w-xl font-['Poppins:Regular',sans-serif] text-lg leading-relaxed text-[#0f0d1d]">
-              Full Stack com forte atuação em backend, cloud e entrega de
-              features ponta a ponta — do desenho de APIs REST à operação em
-              produção com Node.js, Docker e AWS.
+            <div className="mt-4 flex flex-col gap-1 font-['Poppins:Regular',sans-serif] text-sm text-[#3e3b53]">
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4 shrink-0" aria-hidden />
+                {SITE_CONTACT.location}
+              </span>
+            </div>
+
+            <p className="mt-8 max-w-xl font-['Poppins:Regular',sans-serif] text-lg leading-relaxed text-[#0f0d1d]">
+              Full Stack em startups e médias empresas: liderança em equipes
+              ágeis, APIs robustas com Node/Nest e produtos web com React e
+              Next.js — com foco em inovação e redução de custos em cloud e
+              DevOps.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button
-                type="button"
+              <Button
+                variant="outline"
                 onClick={() => scrollToSection("sobre")}
-                className="min-h-11 rounded-xl border-2 border-[#e62e62] px-8 py-3 font-['Montserrat:Bold',sans-serif] font-bold text-[#e62e62] transition-colors hover:bg-[#ffe8f0]"
               >
                 Ver trajetória
-              </button>
-              <Link
+              </Button>
+              <Button
+                variant="primary-montserrat"
                 href={SITE_LINKS.cv}
                 download
-                className="flex min-h-11 items-center justify-center rounded-xl bg-[#e62e62] px-8 py-3 text-center font-['Montserrat:SemiBold',sans-serif] font-semibold text-[#ebe8ff] transition-colors hover:bg-[#d12755]"
               >
                 BAIXAR CV
-              </Link>
+              </Button>
             </div>
 
             <div className="mt-10 flex items-center gap-5">

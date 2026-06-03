@@ -12,9 +12,10 @@ export function ExperienceSection() {
 
           {experiences.map((exp, index) => {
             const isLeft = index % 2 === 0;
+            const entryKey = `${exp.company}-${exp.role}-${exp.period}`;
             return (
               <div
-                key={index}
+                key={entryKey}
                 className={`relative mb-12 w-full pl-12 text-left md:mb-16 md:w-1/2 md:pl-0 ${
                   isLeft
                     ? "md:pr-8 md:text-right"
@@ -36,9 +37,15 @@ export function ExperienceSection() {
                   <p className="mb-1 font-['Poppins:SemiBold',sans-serif] text-lg text-[#e62e62]">
                     {exp.role}
                   </p>
-                  <p className="mb-6 font-['Poppins:Regular',sans-serif] text-sm text-[#3e3b53]">
+                  <p className="mb-1 font-['Poppins:Regular',sans-serif] text-sm text-[#3e3b53]">
                     {exp.period}
                   </p>
+                  {exp.location && (
+                    <p className="mb-6 font-['Poppins:Regular',sans-serif] text-sm text-[#3e3b53]/80">
+                      {exp.location}
+                    </p>
+                  )}
+                  {!exp.location && <div className="mb-6" />}
 
                   <ul className="mb-6 list-none space-y-3">
                     {exp.achievements.map((achievement, idx) => (

@@ -42,7 +42,7 @@ export function EducationSection() {
                 Universidade Cidade de São Paulo (UNICID)
               </p>
               <p className="font-['Poppins:Regular',sans-serif] text-base text-[#3e3b53]">
-                2022 — 2027
+                jul. 2022 — jun. 2027 (previsão de conclusão)
               </p>
             </div>
           </div>

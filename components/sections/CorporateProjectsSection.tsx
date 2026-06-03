@@ -7,7 +7,7 @@ export function CorporateProjectsSection() {
         <h3 className="mb-12 text-center font-['Poppins:Bold',sans-serif] text-4xl text-white">
           Destaques corporativos
         </h3>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
           {corporateProjects.map((project) => (
             <div
               key={project.name}

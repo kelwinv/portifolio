@@ -95,7 +95,7 @@ export function HeroPortrait() {
             Full Stack
           </p>
           <p className="font-['Poppins:Regular',sans-serif] text-[10px] text-[#ebe8ff]/70">
-            TS · Node · Docker
+            React · Next · Node
           </p>
         </div>
 

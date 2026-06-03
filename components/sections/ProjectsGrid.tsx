@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
+import { Button } from "@/components/ui/Button";
 import { useFadeInOnScroll } from "@/lib/hooks/useFadeInOnScroll";
 import { projectsInfo, type projectInfoType } from "@/projectsApi";
 
@@ -35,18 +36,27 @@ export function ProjectsGrid({
     <>
       {showFilters && (
         <div className="flex flex-wrap gap-2">
-          <FilterButton active={tag === "all"} onClick={() => setTag("all")}>
+          <Button
+            variant="filter"
+            active={tag === "all"}
+            onClick={() => setTag("all")}
+          >
             Todos
-          </FilterButton>
-          <FilterButton
+          </Button>
+          <Button
+            variant="filter"
             active={tag === "design"}
             onClick={() => setTag("design")}
           >
             Design
-          </FilterButton>
-          <FilterButton active={tag === "code"} onClick={() => setTag("code")}>
+          </Button>
+          <Button
+            variant="filter"
+            active={tag === "code"}
+            onClick={() => setTag("code")}
+          >
             Code
-          </FilterButton>
+          </Button>
         </div>
       )}
 
@@ -102,49 +112,19 @@ function ProjectCard({ project }: { project: projectInfoType }) {
 
         <div className="mt-6 flex gap-3">
           {project.project && (
-            <a
+            <Button
+              variant="primary-sm"
               href={project.project}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex min-h-11 flex-1 items-center justify-center rounded-lg bg-[#e62e62] px-4 py-2 text-center font-['Poppins:SemiBold',sans-serif] text-sm text-white transition-colors hover:bg-[#d12755]"
+              external
             >
               Ver projeto
-            </a>
+            </Button>
           )}
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex min-h-11 flex-1 items-center justify-center rounded-lg border border-[#0f0d1d]/30 px-4 py-2 text-center font-['Poppins:SemiBold',sans-serif] text-sm text-[#0f0d1d] transition-colors hover:border-[#0f0d1d]/60"
-          >
+          <Button variant="secondary" href={project.github} external>
             Ver código
-          </a>
+          </Button>
         </div>
       </div>
     </article>
-  );
-}
-
-function FilterButton({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`min-h-11 rounded-full px-4 py-2 font-['Poppins:SemiBold',sans-serif] text-sm transition-colors ${
-        active
-          ? "bg-[#0f0d1d] text-white"
-          : "bg-[#ebe8ff] text-[#0f0d1d] hover:bg-[#d0cce9]"
-      }`}
-    >
-      {children}
-    </button>
   );
 }

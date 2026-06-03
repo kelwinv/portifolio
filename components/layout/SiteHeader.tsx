@@ -1,12 +1,13 @@
 "use client";
 
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu } from "lucide-react";
 import { useState } from "react";
 
 import { HeroDesktopNav } from "@/components/layout/HeroDesktopNav";
 import { MobileNav } from "@/components/layout/MobileNav";
+import { Button } from "@/components/ui/Button";
 import { useHeaderVisibility } from "@/lib/hooks/useHeaderVisibility";
 import { NAV_ITEMS } from "@/lib/navigation";
 
@@ -45,15 +46,19 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
               className="z-52 hidden items-center gap-6 font-['Poppins:Regular',sans-serif] text-base md:flex"
               aria-label="Principal"
             >
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.id}
-                  href={`/#${item.id}`}
-                  className="text-[#0f0d1d] transition-opacity hover:opacity-70"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {NAV_ITEMS.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.id}
+                    href={`/#${item.id}`}
+                    className="flex items-center gap-2 text-[#0f0d1d] transition-opacity hover:opacity-70"
+                  >
+                    <Icon className="h-4 w-4 shrink-0" aria-hidden />
+                    {item.label}
+                  </Link>
+                );
+              })}
               <Link
                 href="/projetos"
                 className="text-[#e62e62] transition-opacity hover:opacity-70"
@@ -63,16 +68,16 @@ export function SiteHeader({ variant = "hero" }: SiteHeaderProps) {
             </nav>
           )}
 
-          <button
-            type="button"
-            className="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-black/5 md:hidden"
+          <Button
+            variant="icon"
+            className="md:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-nav-drawer"
             aria-label="Abrir menu"
             onClick={() => setMenuOpen(true)}
           >
             <Menu className="h-6 w-6 text-[#0f0d1d]" />
-          </button>
+          </Button>
         </div>
       </header>
 

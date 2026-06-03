@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect } from "react";
 import { X } from "lucide-react";
 
+import { Button } from "@/components/ui/Button";
 import { NAV_ITEMS } from "@/lib/navigation";
 import { scrollToSection } from "@/lib/scroll";
 
@@ -54,45 +54,42 @@ export function MobileNav({ open, onClose, useHomeLinks }: MobileNavProps) {
           <span className="font-['Montserrat:Bold',sans-serif] text-lg font-bold text-[#ebe8ff]">
             Menu
           </span>
-          <button
-            type="button"
+          <Button
+            variant="icon-inverse"
             onClick={onClose}
-            className="flex h-11 w-11 items-center justify-center rounded-lg text-[#ebe8ff] transition-colors hover:bg-white/10"
             aria-label="Fechar menu"
           >
             <X className="h-6 w-6" />
-          </button>
+          </Button>
         </div>
 
         <nav className="flex flex-col gap-2">
-          {NAV_ITEMS.map((item) =>
-            useHomeLinks ? (
-              <Link
+          {NAV_ITEMS.map((item) => {
+            const Icon = item.icon;
+            return useHomeLinks ? (
+              <Button
                 key={item.id}
+                variant="nav-mobile"
                 href={`/#${item.id}`}
                 onClick={onClose}
-                className="min-h-11 rounded-lg px-4 py-3 font-['Poppins:Regular',sans-serif] text-lg text-[#ebe8ff] transition-colors hover:bg-white/10"
               >
+                <Icon className="h-5 w-5 shrink-0" aria-hidden />
                 {item.label}
-              </Link>
+              </Button>
             ) : (
-              <button
+              <Button
                 key={item.id}
-                type="button"
+                variant="nav-mobile"
                 onClick={() => handleNav(item.id)}
-                className="min-h-11 rounded-lg px-4 py-3 text-left font-['Poppins:Regular',sans-serif] text-lg text-[#ebe8ff] transition-colors hover:bg-white/10"
               >
+                <Icon className="h-5 w-5 shrink-0" aria-hidden />
                 {item.label}
-              </button>
-            ),
-          )}
-          <Link
-            href="/projetos"
-            onClick={onClose}
-            className="mt-4 min-h-11 rounded-lg px-4 py-3 font-['Poppins:SemiBold',sans-serif] text-lg text-[#e62e62] transition-colors hover:bg-white/10"
-          >
+              </Button>
+            );
+          })}
+          <Button variant="nav-accent" href="/projetos" onClick={onClose}>
             Todos os projetos
-          </Link>
+          </Button>
         </nav>
       </aside>
     </>

@@ -11,68 +11,29 @@ export type CorporateProject = {
 
 export const corporateProjects: CorporateProject[] = [
   {
-    name: "Rastreamento e Transporte",
-    company: "iFollow",
+    name: "Aplicações web e APIs",
+    company: "iFollow Brasil",
     description:
-      "Sistema de monitoramento em tempo real com processamento diário de centenas de itens e alertas automatizados para operações críticas.",
-    stack: [
-      "Node.js",
-      "MongoDB",
-      "AWS Lambda",
-      "React",
-      "React Native",
-      "Docker",
-    ],
+      "Desenvolvimento full stack com foco em interfaces responsivas, APIs REST e qualidade via testes automatizados.",
+    stack: ["React", "Next.js", "Node.js", "NestJS", "MySQL", "PostgreSQL", "Jest"],
     problem:
-      "Falta de visibilidade operacional sobre entregas e atrasos; equipes reagiam manualmente.",
+      "Necessidade de evoluir produtos web e backends com consistência e cobertura de testes.",
     technicalDecision:
-      "Processamento com Node.js e jobs agendados (alertas a cada 5 min), MongoDB para volume flexível e AWS Lambda para cargas pontuais; dashboards React e React Native para equipe de campo.",
-    tradeOff:
-      "Complexidade de múltiplos tipos de alerta vs. resposta rápida — priorizou cobertura de 24 cenários antes de unificar regras.",
-    result: "300+ itens/dia · 24 tipos de alertas · 8 grandes clientes",
+      "React/Next no front, Node/Nest nas APIs e modelagem relacional (MySQL/PostgreSQL) com TDD em Jest.",
+    result:
+      "Entrega contínua de páginas, APIs e estruturas de dados alinhadas ao time de produto",
   },
   {
-    name: "Sistema de Tickets Interno",
+    name: "Plataforma interna e deploy",
     company: "Grupo Prime",
     description:
-      "Plataforma interna de chamados com automação de categorização e relatórios, substituindo ferramenta SaaS externa.",
-    stack: ["NestJS", "React", "PostgreSQL", "AWS EC2", "Docker"],
+      "Sistemas internos com APIs REST, bancos relacionais e operação em servidores Linux.",
+    stack: ["React", "Next.js", "NestJS", "MySQL", "MariaDB", "Docker", "PM2", "Nginx", "Python"],
     problem:
-      "Dependência de ferramenta de terceiros cara e limitada para cerca de 2.000 colaboradores.",
+      "Manter várias aplicações em produção com deploy previsível e automações de processo.",
     technicalDecision:
-      "NestJS + PostgreSQL para regras de negócio e relatórios; deploy de 8 aplicações com Docker, PM2 e Nginx em AWS EC2; integrações via APIs REST.",
-    tradeOff:
-      "Tempo de desenvolvimento interno vs. economia recorrente — aceitou MVP iterativo antes de paridade total com a ferramenta anterior.",
-    result: "R$ 5k/mês economizados · 2.000 usuários atendidos",
-  },
-  {
-    name: "Dashboard Operacional Multi-Plataforma",
-    description: "Painéis web e mobile para gestão de operações em tempo real",
-    stack: ["React", "React Native", "Express", "MySQL"],
-    problem: "Equipes sem acesso mobile aos dados críticos",
-    result: "Redução de 40% no tempo de resposta operacional",
-  },
-  {
-    name: "Migração para AWS com Microsserviços",
-    description:
-      "Arquitetura escalável com processamento paralelo e alta disponibilidade",
-    stack: ["AWS Lambda", "API Gateway", "RabbitMQ", "Docker"],
-    problem: "Monolito custoso e difícil de escalar",
-    result: "Redução de 30% nos custos de infraestrutura",
-  },
-  {
-    name: "Automação de Relatórios",
-    description:
-      "Pipeline automatizado de extração, processamento e envio de relatórios",
-    stack: ["Python", "Node.js", "PostgreSQL", "Cron"],
-    problem: "Geração manual demorada e sujeita a erros",
-    result: "Economia de 20 horas/mês de trabalho manual",
-  },
-  {
-    name: "API de Alta Disponibilidade",
-    description: "REST API escalável com cache, retry logic e monitoramento",
-    stack: ["NestJS", "ElastiCache", "Docker", "Nginx"],
-    problem: "API legada com timeouts e baixa performance",
-    result: "99.9% de uptime + redução de 70% no tempo de resposta",
+      "Stack React/Next + Nest, bancos MySQL/MariaDB, deploy com Docker, PM2 e Nginx; automações complementares em Python.",
+    result:
+      "Aplicações em produção com deploy estruturado e testes automatizados (Jest/TDD)",
   },
 ];

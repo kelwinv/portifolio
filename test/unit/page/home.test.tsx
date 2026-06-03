@@ -19,6 +19,9 @@ describe("Home Page", () => {
       screen.getByRole("heading", { name: /números de impacto/i }),
     ).toBeInTheDocument();
     expect(
+      screen.getByRole("heading", { name: /certificações/i }),
+    ).toBeInTheDocument();
+    expect(
       screen.getByRole("heading", { name: /projetos pessoais/i }),
     ).toBeInTheDocument();
   });
@@ -30,11 +33,19 @@ describe("Home Page", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders hero pitch", () => {
+  it("renders hero pitch aligned with LinkedIn summary", () => {
     render(<Home />);
     expect(
-      screen.getByText(/forte atuação em backend, cloud e entrega de features/i),
+      screen.getByText(/liderança em equipes ágeis/i),
     ).toBeInTheDocument();
+  });
+
+  it("renders contact location and phone", () => {
+    render(<Home />);
+    expect(screen.getAllByText(/Osasco, São Paulo/i).length).toBeGreaterThan(
+      0,
+    );
+    expect(screen.getAllByText(/\+55 11 98958-1779/i).length).toBeGreaterThan(0);
   });
 
   it("renders link to all projects", () => {
@@ -70,5 +81,12 @@ describe("Home Page", () => {
       "href",
       "mailto:kelwin.v.goncalves@gmail.com",
     );
+  });
+
+  it("renders experience from Profile.pdf", () => {
+    render(<Home />);
+    expect(screen.getAllByText(/iFollow Brasil/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/ENLINE/i)).toBeInTheDocument();
+    expect(screen.getByText(/jun\. 2025 – Atual/i)).toBeInTheDocument();
   });
 });

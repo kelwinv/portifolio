@@ -2,6 +2,7 @@
 
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 
+import { Button } from "@/components/ui/Button";
 import { NAV_ITEMS, type NavSectionId } from "@/lib/navigation";
 import { useActiveSection } from "@/lib/hooks/useActiveSection";
 import { scrollToSection } from "@/lib/scroll";
@@ -78,21 +79,20 @@ export function HeroDesktopNav() {
     >
       {NAV_ITEMS.map((item) => {
         const isActive = activeId === item.id;
+        const Icon = item.icon;
         return (
-          <button
+          <Button
             key={item.id}
             ref={setItemRef(item.id)}
-            type="button"
+            variant="nav"
+            active={isActive}
             onClick={() => handleClick(item.id)}
             aria-current={isActive ? "true" : undefined}
-            className={`relative py-1 transition-colors duration-300 motion-reduce:transition-none ${
-              isActive
-                ? "text-[#e62e62]"
-                : "text-[#0f0d1d] hover:text-[#e62e62]/70"
-            } ${activeId === null ? "text-[#f5f3ff]" : ""}`}
+            className={activeId === null ? "text-[#f5f3ff]" : undefined}
           >
+            <Icon className="h-4 w-4 shrink-0" aria-hidden />
             {item.label}
-          </button>
+          </Button>
         );
       })}
 
