@@ -17,7 +17,8 @@
     "test:cy": "start-server-and-test dev http://localhost:3000 test:cy:run",
     "test:cy:watch": "start-server-and-test dev http://localhost:3000 test:cy:open",
     "test:cy:run": "cypress run",
-    "test:cy:open": "cypress open --browser chrome --config video=false"
+    "test:cy:open": "cypress open --browser chrome --config video=false",
+    "optimize:images": "node scripts/optimize-profile.mjs"
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.2.3",
@@ -43,6 +44,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -55,6 +57,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "sharp": "^0.34.2",
     "start-server-and-test": "^2.0.11",
     "tailwindcss": "^4.0.14",
     "ts-node": "^10.9.2",

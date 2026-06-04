@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { ProjectsGrid } from "@/components/sections/ProjectsGrid";
+import { createPageMetadata } from "@/lib/seo/site";
 
-export const metadata: Metadata = {
-  title: "Projetos | Kelwin Vieira",
+export const metadata = createPageMetadata({
+  title: "Projetos",
   description:
     "Portfólio completo de projetos pessoais — full stack, Node.js, React e experimentos de design.",
-};
+  path: "/projetos",
+});
 
 export default function ProjetosPage() {
   return (
