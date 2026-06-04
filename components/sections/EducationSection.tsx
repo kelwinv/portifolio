@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 export function EducationSection() {
   return (
     <section className="bg-[#f5f3ff] px-4 py-28 sm:px-8">
@@ -5,7 +7,7 @@ export function EducationSection() {
         <h2 className="mb-16 text-center font-['Poppins:Bold',sans-serif] text-5xl text-[#0f0d1d]">
           Formação
         </h2>
-        <div className="rounded-2xl bg-white p-8 shadow-lg">
+        <ScrollReveal className="rounded-2xl bg-white p-8 shadow-lg">
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0 rounded-2xl bg-gradient-to-br from-[#e62e62] to-[#d12755] p-6">
               <svg
@@ -46,7 +48,7 @@ export function EducationSection() {
               </p>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

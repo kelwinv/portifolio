@@ -1,162 +1,94 @@
 # Diretrizes de animação (sutis)
 
-Nível acordado: **sutil** — fade-in ao scroll, hover suave, decorações estáticas na foto (micro-float opcional se candidato confirmar).
+Nível acordado: **sutil** — reveal ao scroll, hover suave, decorações estáticas na foto (micro-float opcional no hero).
 
 ## Princípios
 
 1. Animações **reforçam hierarquia**, não distraem
-2. Duração curta: **200–400ms** para hover; **400–600ms** para fade-in
-3. Respeitar **`prefers-reduced-motion: reduce`**
-4. Preferir **CSS** e **transform/opacity** (GPU-friendly)
+2. Duração curta: **200–400ms** para hover/tap; **450–550ms** para reveal
+3. Respeitar **`prefers-reduced-motion`** via `useReducedMotion()` do Motion
+4. Animar só **opacity** e **transform** (GPU-friendly)
 5. Evitar animar `width`, `height`, `top`, `left` — usar `transform`
 
 ---
 
-## Fade-in ao scroll (IntersectionObserver)
+## Motion — reveal ao scroll
 
-Hook mínimo (criar em `lib/hooks/useFadeInOnScroll.ts` se não existir):
+Pacote: `motion` (`import { motion } from "motion/react"`).
 
-```typescript
-"use client";
+**Variantes compartilhadas:** [`lib/motion/variants.ts`](../../../lib/motion/variants.ts)
 
-import { useEffect, useRef, useState } from "react";
+**Componentes:**
 
-export function useFadeInOnScroll(threshold = 0.1) {
-  const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+- [`ScrollReveal`](../../../components/ui/ScrollReveal.tsx) — item único (`whileInView`, `once`)
+- [`StaggerReveal`](../../../components/ui/StaggerReveal.tsx) + `StaggerItem` — grids e listas com stagger (~80ms)
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefersReduced) {
-      setVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, visible };
-}
-```
-
-Uso em seção:
+Uso em seção (Server Component pode importar os wrappers client):
 
 ```tsx
-const { ref, visible } = useFadeInOnScroll();
-<section
-  ref={ref}
-  className={`transition-all duration-500 ${
-    visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-  }`}
->
+<StaggerReveal className="grid ...">
+  {items.map((item) => (
+    <StaggerItem key={item.id} className="card-hover ...">
+      ...
+    </StaggerItem>
+  ))}
+</StaggerReveal>
 ```
 
-Alternativa **só CSS** (sem IO): `@keyframes fadeInUp` em `globals.css` com `animation-fill-mode: both` — menos controle de "once".
+Timeline (zigzag): `ScrollReveal` com `slideFromLeft` / `slideFromRight`.
+
+Filtros dinâmicos (ex.: projetos): `AnimatePresence` + `StaggerItem animatePresence` com variantes `exit`.
 
 ---
 
 ## Hover em cards
 
-```css
-@layer utilities {
-  .card-hover {
-    @apply transition-[transform,box-shadow] duration-300 ease-out;
-  }
-  .card-hover:hover {
-    @apply -translate-y-0.5 shadow-xl;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .card-hover:hover {
-      transform: none;
-    }
-  }
-}
-```
+CSS em `globals.css` (`.card-hover`) para elevação geral.
+
+Motion pontual onde faz sentido:
+
+- Cards do marquee corporativo: `whileHover={{ y: -2 }}`
+- Botões `primary` / `filter`: `whileTap={{ scale: 0.98 }}`
 
 ---
 
-## Micro-float na decoração do hero (opcional)
+## Micro-float na decoração do hero
 
-Somente se V3 do questionário = "float sutil":
-
-```css
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .animate-float {
-    animation: none;
-  }
-}
-```
-
-Aplicar só em elementos `aria-hidden` decorativos.
+CSS `@keyframes float` em `globals.css` — só elementos decorativos `aria-hidden`.
 
 ---
 
-## Menu mobile — transição drawer
+## Menu mobile
 
-```css
-.drawer-enter {
-  @apply translate-x-0 opacity-100 transition-transform duration-300 ease-out;
-}
-.drawer-exit {
-  @apply -translate-x-full opacity-0;
-}
-```
+[`MobileNav`](../../../components/layout/MobileNav.tsx): `AnimatePresence` + spring no drawer; fallback CSS quando `useReducedMotion()`.
 
-Ou toggle classes Tailwind `translate-x-0` / `-translate-x-full` no painel.
+---
+
+## Nav desktop (hero)
+
+[`HeroDesktopNav`](../../../components/layout/HeroDesktopNav.tsx): `layoutId="hero-nav-indicator"` entre itens ativos; fallback com indicador `transform`/`width` em reduced motion.
 
 ---
 
 ## Scroll suave
 
-Já usado no Hero (`scrollIntoView({ behavior: "smooth" })`). Com reduced motion:
+Util [`lib/scroll.ts`](../../../lib/scroll.ts) — `behavior: "auto"` quando reduced motion.
 
-```typescript
-const scrollTo = (id: string) => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  el.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
-};
-```
+---
 
-Centralizar em util compartilhada se header e hero usarem scroll.
+## Marquee
+
+[`MarqueeCarousel`](../../../components/ui/MarqueeCarousel.tsx) já usa Motion + pausa em reduced motion.
 
 ---
 
 ## O que evitar
 
-- Parallax pesado
-- Framer Motion (salvo pedido explícito)
+- Parallax pesado além do hero atual
 - Autoplay de vídeo/GIF sem controle
 - Múltiplas animações simultâneas na primeira dobra
 - Blink ou pulse agressivo em CTAs
+- Reveal no scroll em conteúdo sempre visível (ex.: marquee infinito)
 
 ---
 

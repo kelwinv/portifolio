@@ -16,7 +16,7 @@ describe("Home Page", () => {
       screen.getByRole("heading", { name: /sobre mim/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: /números de impacto/i }),
+      screen.getByRole("heading", { name: /recomendações/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: /certificações/i }),
@@ -81,7 +81,58 @@ describe("Home Page", () => {
   it("renders experience from Profile.pdf", () => {
     render(<Home />);
     expect(screen.getAllByText(/iFollow Brasil/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/ENLINE/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/ENLINE/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/jun\. 2025 – Atual/i)).toBeInTheDocument();
+  });
+
+  it("renders Grupo Prime experience with pleno tenure in period", () => {
+    render(<Home />);
+    expect(
+      screen.getByRole("heading", { name: /Grupo Prime/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/set\. 2023 – mai\. 2025 · pleno desde jan\/2024/i),
+    ).toBeInTheDocument();
+  });
+
+  it("renders ENLINE experience with pleno tenure in period", () => {
+    render(<Home />);
+    expect(
+      screen.getByText(/jul\. 2021 – ago\. 2023 · pleno desde mai\/2022/i),
+    ).toBeInTheDocument();
+  });
+
+  it("renders LinkedIn recommendations section", () => {
+    render(<Home />);
+    expect(screen.getByText(/Samuel Sousa/i)).toBeInTheDocument();
+    expect(screen.getByText(/Rafael Gomes/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/proatividade fará uma diferença positiva/i),
+    ).toBeInTheDocument();
+    const linkedinLink = screen.getByRole("link", {
+      name: /ver todas no linkedin/i,
+    });
+    expect(linkedinLink).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/kelwinv/details/recommendations/",
+    );
+  });
+
+  it("renders corporate highlights section", () => {
+    render(<Home />);
+    expect(
+      screen.getByRole("heading", { name: /destaques corporativos/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByRole("heading", {
+        name: /Sistema de Monitoramento de alertas/i,
+      }).length,
+    ).toBeGreaterThan(0);
+  });
+
+  it("renders languages including Spanish", () => {
+    render(<Home />);
+    expect(screen.getByText(/Espanhol/i)).toBeInTheDocument();
+    expect(screen.getByText(/Em evolução/i)).toBeInTheDocument();
   });
 });

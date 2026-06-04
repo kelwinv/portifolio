@@ -1,3 +1,4 @@
+import { StaggerItem, StaggerReveal } from "@/components/ui/StaggerReveal";
 import { languages } from "@/lib/content/languages";
 
 export function LanguagesSection() {
@@ -7,9 +8,9 @@ export function LanguagesSection() {
         <h2 className="mb-8 text-center font-['Poppins:Bold',sans-serif] text-3xl text-[#0f0d1d]">
           Idiomas
         </h2>
-        <ul className="space-y-4">
+        <StaggerReveal className="space-y-4">
           {languages.map((lang) => (
-            <li
+            <StaggerItem
               key={lang.name}
               className="rounded-2xl border border-[#ebe8ff] bg-[#f5f3ff] px-6 py-4 text-center"
             >
@@ -19,9 +20,9 @@ export function LanguagesSection() {
               <p className="mt-1 font-['Poppins:Regular',sans-serif] text-base text-[#3e3b53]">
                 {lang.level}
               </p>
-            </li>
+            </StaggerItem>
           ))}
-        </ul>
+        </StaggerReveal>
       </div>
     </section>
   );

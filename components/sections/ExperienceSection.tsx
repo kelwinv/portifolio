@@ -1,4 +1,6 @@
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { experiences } from "@/lib/content/experience";
+import { slideFromLeft, slideFromRight } from "@/lib/motion/variants";
 
 export function ExperienceSection() {
   return (
@@ -14,8 +16,9 @@ export function ExperienceSection() {
             const isLeft = index % 2 === 0;
             const entryKey = `${exp.company}-${exp.role}-${exp.period}`;
             return (
-              <div
+              <ScrollReveal
                 key={entryKey}
+                variants={isLeft ? slideFromLeft : slideFromRight}
                 className={`relative mb-12 w-full pl-12 text-left md:mb-16 md:w-1/2 md:pl-0 ${
                   isLeft
                     ? "md:pr-8 md:text-right"
@@ -79,7 +82,7 @@ export function ExperienceSection() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

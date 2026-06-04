@@ -6,7 +6,7 @@ import { DifferentialsSection } from "@/components/sections/DifferentialsSection
 import { EducationSection } from "@/components/sections/EducationSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ImpactSection } from "@/components/sections/ImpactSection";
+import { RecommendationsSection } from "@/components/sections/RecommendationsSection";
 import { LanguagesSection } from "@/components/sections/LanguagesSection";
 import { PersonalProjectsSection } from "@/components/sections/PersonalProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
@@ -16,14 +16,12 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <AboutSection />
-      <ImpactSection />
+      <CorporateProjectsSection />
       <SkillsSection />
       <ExperienceSection />
 
-      <section id="projetos">
-        <CorporateProjectsSection />
-        <PersonalProjectsSection />
-      </section>
+      <RecommendationsSection />
+      <PersonalProjectsSection />
 
       <DifferentialsSection />
       <EducationSection />

@@ -1,13 +1,24 @@
 "use client";
 
+import { AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import { useFadeInOnScroll } from "@/lib/hooks/useFadeInOnScroll";
+import { StaggerItem, StaggerReveal } from "@/components/ui/StaggerReveal";
+import { fadeUpItem } from "@/lib/motion/variants";
 import { projectsInfo, type projectInfoType } from "@/projectsApi";
 
 type Tag = "all" | "design" | "code";
+
+const projectItemVariants = {
+  ...fadeUpItem,
+  exit: {
+    opacity: 0,
+    scale: 0.98,
+    transition: { duration: 0.2 },
+  },
+};
 
 type ProjectsGridProps = {
   featuredOnly?: boolean;
@@ -60,25 +71,29 @@ export function ProjectsGrid({
         </div>
       )}
 
-      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
-        ))}
-      </div>
+      <StaggerReveal className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project) => (
+            <StaggerItem
+              key={project.name}
+              as="article"
+              layout
+              animatePresence
+              variants={projectItemVariants}
+              className="card-hover flex flex-col overflow-hidden rounded-2xl border border-[#ebe8ff] shadow-sm"
+            >
+              <ProjectCardContent project={project} />
+            </StaggerItem>
+          ))}
+        </AnimatePresence>
+      </StaggerReveal>
     </>
   );
 }
 
-function ProjectCard({ project }: { project: projectInfoType }) {
-  const { ref, visible } = useFadeInOnScroll();
-
+function ProjectCardContent({ project }: { project: projectInfoType }) {
   return (
-    <article
-      ref={ref}
-      className={`fade-in-on-scroll card-hover flex flex-col overflow-hidden rounded-2xl border border-[#ebe8ff] shadow-sm ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-      } transition-all duration-500`}
-    >
+    <>
       <div className="relative aspect-[16/10] bg-[#f5f3ff]">
         <Image
           src={project.imgUrl}
@@ -121,6 +136,6 @@ function ProjectCard({ project }: { project: projectInfoType }) {
           </Button>
         </div>
       </div>
-    </article>
+    </>
   );
 }

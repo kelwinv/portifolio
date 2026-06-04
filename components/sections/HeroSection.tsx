@@ -24,7 +24,7 @@ export function HeroSection() {
       <SiteHeader variant="hero" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="mt-14 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        <div className="mt-24 grid grid-cols-1 items-center gap-12 lg:mt-14 lg:grid-cols-2">
           <div>
             <h1 className="font-['Montserrat:Bold',sans-serif] text-5xl leading-tight font-bold text-[#e62e62]">
               Kelwin Vieira

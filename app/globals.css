@@ -138,10 +138,4 @@ h6 {
   .card-hover:hover {
     transform: none;
   }
-
-  .fade-in-on-scroll {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
 }
