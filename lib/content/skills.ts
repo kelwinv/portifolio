@@ -53,6 +53,18 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Automação",
-    skills: ["Python", "Scripts Internos", "RabbitMQ", "API Gateway"],
+    skills: [
+      "Python",
+      "Scripts Internos",
+      "RabbitMQ",
+      "API Gateway",
+      "LLMs",
+      "OpenAI API / SDK",
+      "Anthropic Claude",
+      "AI Agents",
+      "Prompt Engineering",
+      "Cursor (AI-assisted dev)",
+      "MCP",
+    ],
   },
 ];

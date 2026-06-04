@@ -4,6 +4,8 @@ export const SITE_LINKS = {
   email: "mailto:kelwin.v.goncalves@gmail.com",
   github: "https://github.com/kelwinv",
   linkedin: "https://linkedin.com/in/kelwinv",
+  linkedinRecommendations:
+    "https://www.linkedin.com/in/kelwinv/details/recommendations/",
   portfolio: "https://kelwin.vercel.app/",
   cv: "/cv/kelwin.vieira.pdf",
 } as const;

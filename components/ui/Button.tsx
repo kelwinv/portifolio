@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "min-h-11 rounded-xl bg-[#e62e62] px-8 py-3 font-['Poppins:SemiBold',sans-serif] font-semibold text-white hover:bg-[#d12755]",
+          "min-h-11 rounded-xl bg-[#e62e62] px-8 py-3 font-['Poppins:SemiBold',sans-serif] font-semibold text-white hover:bg-[#d12755] active:scale-[0.98] motion-reduce:active:scale-100",
         "primary-montserrat":
           "min-h-11 rounded-xl bg-[#e62e62] px-8 py-3 text-center font-['Montserrat:SemiBold',sans-serif] font-semibold text-[#ebe8ff] hover:bg-transparent hover:text-[#e62e62] hover:border-[#e62e62] border",
         outline:
@@ -26,7 +26,7 @@ const buttonVariants = cva(
         ghost:
           "min-w-[200px] gap-3 rounded-xl border border-white/30 bg-white/10 px-8 py-4 font-['Poppins:SemiBold',sans-serif] text-lg text-white hover:bg-white/20",
         filter:
-          "min-h-11 rounded-full px-4 py-2 font-['Poppins:SemiBold',sans-serif] text-sm",
+          "min-h-11 rounded-full px-4 py-2 font-['Poppins:SemiBold',sans-serif] text-sm active:scale-[0.98] motion-reduce:active:scale-100",
         icon: "h-11 w-11 shrink-0 rounded-lg hover:bg-black/5",
         "icon-inverse":
           "h-11 w-11 shrink-0 rounded-lg text-[#ebe8ff] hover:bg-white/10",

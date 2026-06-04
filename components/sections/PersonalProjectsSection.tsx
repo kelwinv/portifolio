@@ -4,7 +4,7 @@ import { ProjectsGrid } from "@/components/sections/ProjectsGrid";
 
 export function PersonalProjectsSection() {
   return (
-    <section className="bg-white px-4 py-28 sm:px-8">
+    <section id="projetos" className="bg-white px-4 py-28 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>

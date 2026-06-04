@@ -6,6 +6,11 @@ export type Language = {
 export const languages: Language[] = [
   {
     name: "Inglês",
-    level: "Intermediário (leitura técnica e comunicação escrita)",
+    level:
+      "Em evolução — leitura técnica, comunicação escrita; conversação em desenvolvimento",
+  },
+  {
+    name: "Espanhol",
+    level: "Básico",
   },
 ];

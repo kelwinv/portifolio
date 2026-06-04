@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "motion/react";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
@@ -19,11 +20,18 @@ const INITIAL_INDICATOR: IndicatorStyle = {
   visible: false,
 };
 
+const indicatorSpring = {
+  type: "spring" as const,
+  stiffness: 380,
+  damping: 30,
+};
+
 export function HeroDesktopNav() {
   const navRef = useRef<HTMLElement>(null);
   const itemRefs = useRef(new Map<NavSectionId, HTMLButtonElement>());
   const { activeId, setActiveId } = useActiveSection(true);
   const [indicator, setIndicator] = useState<IndicatorStyle>(INITIAL_INDICATOR);
+  const reducedMotion = useReducedMotion();
 
   const setItemRef = useCallback(
     (id: NavSectionId) => (el: HTMLButtonElement | null) => {
@@ -54,17 +62,19 @@ export function HeroDesktopNav() {
   }, [activeId]);
 
   useLayoutEffect(() => {
+    if (!reducedMotion) return;
     updateIndicator();
-  }, [updateIndicator]);
+  }, [updateIndicator, reducedMotion]);
 
   useLayoutEffect(() => {
+    if (reducedMotion) return;
     const nav = navRef.current;
     if (!nav) return;
 
     const observer = new ResizeObserver(() => updateIndicator());
     observer.observe(nav);
     return () => observer.disconnect();
-  }, [updateIndicator]);
+  }, [updateIndicator, reducedMotion]);
 
   const handleClick = (id: NavSectionId) => {
     setActiveId(id);
@@ -88,24 +98,34 @@ export function HeroDesktopNav() {
             active={isActive}
             onClick={() => handleClick(item.id)}
             aria-current={isActive ? "true" : undefined}
-            className={activeId === null ? "text-[#f5f3ff]" : undefined}
+            className={`relative ${activeId === null ? "text-[#f5f3ff]" : ""}`}
           >
             <Icon className="h-4 w-4 shrink-0" aria-hidden />
             {item.label}
+            {isActive && !reducedMotion && (
+              <motion.span
+                layoutId="hero-nav-indicator"
+                className="pointer-events-none absolute right-0 bottom-0 left-0 h-0.5 rounded-full bg-[#e62e62]"
+                transition={indicatorSpring}
+                aria-hidden
+              />
+            )}
           </Button>
         );
       })}
 
-      <span
-        aria-hidden
-        className={`pointer-events-none absolute bottom-0 left-0 h-0.5 rounded-full bg-[#e62e62] transition-[transform,width,opacity] duration-300 ease-out motion-reduce:transition-none ${
-          indicator.visible ? "opacity-100" : "opacity-0"
-        }`}
-        style={{
-          width: indicator.width,
-          transform: `translateX(${indicator.translateX}px)`,
-        }}
-      />
+      {reducedMotion && (
+        <span
+          aria-hidden
+          className={`pointer-events-none absolute bottom-0 left-0 h-0.5 rounded-full bg-[#e62e62] transition-[transform,width,opacity] duration-300 ease-out motion-reduce:transition-none ${
+            indicator.visible ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            width: indicator.width,
+            transform: `translateX(${indicator.translateX}px)`,
+          }}
+        />
+      )}
     </nav>
   );
 }

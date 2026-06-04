@@ -1,3 +1,5 @@
+import { StaggerItem, StaggerReveal } from "@/components/ui/StaggerReveal";
+
 export function DifferentialsSection() {
   const differentials = [
     {
@@ -27,8 +29,9 @@ export function DifferentialsSection() {
     },
     {
       icon: "🤝",
-      title: "Boa comunicação com time e stakeholders",
-      description: "Colaboração e alinhamento constante",
+      title: "Liderança de times e comunicação com stakeholders",
+      description:
+        "Mentoria e coordenação técnica, alinhamento com produto e negócio",
     },
   ];
 
@@ -38,9 +41,9 @@ export function DifferentialsSection() {
         <h2 className="mb-16 text-center font-['Poppins:Bold',sans-serif] text-5xl text-[#0f0d1d]">
           Diferenciais
         </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerReveal className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {differentials.map((diff, index) => (
-            <div
+            <StaggerItem
               key={index}
               className="card-hover rounded-2xl bg-gradient-to-br from-[#ebe8ff] to-[#f5f3ff] p-8 shadow-lg"
             >
@@ -51,9 +54,9 @@ export function DifferentialsSection() {
               <p className="font-['Poppins:Regular',sans-serif] text-base text-[#3e3b53]">
                 {diff.description}
               </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );
