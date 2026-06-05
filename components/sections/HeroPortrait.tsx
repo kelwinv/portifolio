@@ -75,7 +75,7 @@ export function HeroPortrait() {
 
       <div className="relative z-20 flex h-full items-end justify-center px-2 pb-2">
         <Image
-          src="/profile.png"
+          src="/profile.webp"
           alt="Kelwin Vieira - Desenvolvedor Full Stack"
           width={720}
           height={720}
