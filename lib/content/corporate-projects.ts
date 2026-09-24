@@ -6,102 +6,58 @@ export type CorporateProject = {
   problem: string;
   result: string;
   technicalDecision?: string;
-  tradeOff?: string;
 };
 
 export const corporateProjects: CorporateProject[] = [
   {
-    name: "Sistema de Monitoramento de alertas",
-    description:
-      "Sistema de monitoramento de alertas eletricos e meteorológico com processamento de dados em tempo real e alertas automatizados para operações críticas.",
-    stack: ["Node.js", "React", "MongoDB", "RabbitMQ", "AWS Lambda", "Docker"],
-    problem:
-      "Impossibilidade de monitorar alertas de forma centralizada e eficiente.",
-    technicalDecision:
-      "Processamento com Node.js e jobs agendados (alertas a cada 5 min), MongoDB para volume flexível e AWS Lambda para cargas pontuais; dashboards React e React Native para equipe de campo.",
-    tradeOff:
-      "Complexidade de múltiplos tipos de alerta vs. resposta rápida — priorizou cobertura de 24 cenários antes de unificar regras. - Complexidade de dados de clientes com envio diferentes",
-    result: "300+ itens/dia · 24 tipos de alertas · 8 grandes clientes",
-  },
-  {
-    name: "Otimização de 	Dashboard",
-    description:
-      "Dashboard de monitoramento de alertas com baixa performance e dificuldade de manutenção, cerca de 5 minutos para carregar os dados",
-    stack: ["React", "React Native", "Express", "MySQL"],
-    problem:
-      "Dashboard com baixa performance e dificuldade de manutenção, cerca de 5 minutos para carregar os dados",
-    technicalDecision:
-      "Otimização de queries e indexação, uso de cache, e melhoria na performance do dashboard",
-    tradeOff: "Tempo de desenvolvimento vs. custo de manutenção",
-    result:
-      "Tempo de carregamento reduzido para 2 segundos, uma melhoria de 99,3% no tempo de resposta",
-  },
-  {
-    name: "Migração para AWS com Microsserviços",
-    description:
-      "Arquitetura escalável com processamento paralelo e alta disponibilidade",
-    stack: ["AWS Lambda", "API Gateway", "RabbitMQ", "Docker"],
-    problem: "Monolito custoso e difícil de escalar",
-    result: "Redução de 30% nos custos de infraestrutura",
-  },
-  {
-    name: "Automação de Relatórios",
-    description:
-      "Pipeline automatizado de extração, processamento e envio de relatórios",
-    stack: ["Python", "Node.js", "PostgreSQL", "Cron"],
-    problem: "Geração manual demorada e sujeita a erros",
-    result: "Economia de 20 horas/mês de trabalho manual",
-  },
-  {
-    name: "Sistema de OS com Cashflow",
+    name: "Dashboard de monitoramento",
     company: "iFollow",
     description:
-      "Sistema de OS com Cashflow para gestão de projetos e financeiro, com integração com sistema de financeiro da empresa",
-    stack: [
-      "nestjs",
-      "nextjs",
-      "postgresql",
-      "docker",
-      "rabbitmq",
-      "jest",
-      "azure",
-      "typescript",
-      "socket.io",
-    ],
+      "Investiguei um dashboard que levava cerca de cinco minutos para carregar e encontrei o gargalo na renderização de grandes volumes de dados.",
+    stack: ["React"],
     problem:
-      "OS manuais com pouca integrações com sistemas terceiros por conta da complexidade unica do workflow interno da empresa",
+      "O front-end recebia dados do dia inteiro e fazia a agregação antes de renderizar os gráficos.",
     technicalDecision:
-      "Sistema de OS com Cashflow para gestão de projetos e financeiro, com integração com sistema de financeiro da empresa",
+      "Mudei a agregação para o back-end, passei a buscar dados de forma assíncrona em stream e apliquei lazy loading.",
     result:
-      "Um MVP que resultou em mais rastreabilidade e transparência no processo de execução de OS e mais agilidade na gestão de projetos",
+      "O carregamento caiu de cerca de 5 minutos para cerca de 2 segundos.",
   },
   {
-    name: "Sistema de Tickets Interno",
-    company: "GRUPO PRIME",
+    name: "Cronos: ordens de serviço e cashflow",
+    company: "iFollow",
     description:
-      "Plataforma interna de chamados com automação de categorização e relatórios, substituindo ferramenta SaaS externa.",
-    stack: ["NestJS", "React", "PostgreSQL", "Nginx", "PM2", "Docker"],
+      "O produto estava há cerca de três anos sem piloto, enquanto regras de negócio e processos ainda mudavam.",
+    stack: [],
     problem:
-      "Dependência de ferramenta de terceiros cara e limitada para cerca de 2.000 colaboradores.",
+      "O escopo crescia antes de existir uma versão utilizável para as áreas envolvidas.",
     technicalDecision:
-      "NestJS + PostgreSQL para regras de negócio e relatórios; deploy de 8 aplicações com Docker, PM2 e Nginx em AWS EC2; integrações via APIs REST.",
-    tradeOff:
-      "Tempo de desenvolvimento interno vs. economia recorrente — aceitou MVP iterativo antes de paridade total com a ferramenta anterior.",
-    result: "R$ 5k/mês economizados · 2.000 usuários atendidos",
+      "No esforço conjunto de definição e entrega, delimitei fluxos e domínios e modelei as regras de cashflow. A equipe cortou comissão da primeira versão para manter o fluxo central.",
+    result:
+      "A primeira versão foi entregue após três semanas de war room e uma semana de finalização; o piloto completo levou cerca de seis meses.",
   },
   {
-    name: "Microserviços para Fluxo de Tratamento de Dados",
-    company: "Enline",
+    name: "Plataforma interna de tickets",
+    company: "Grupo Prime",
     description:
-      "Pipeline de ingestão, normalização e distribuição de dados eletricos e geográficos, com processamento assíncrono e operação contínua.",
-    stack: ["Node.js", "React", "MongoDB", "RabbitMQ", "AWS Lambda", "Docker"],
+      "Identifiquei a preocupação da diretoria com o custo crescente do SaaS de chamados e propus escopo e prazo para uma alternativa interna.",
+    stack: ["React", "Node.js", "PostgreSQL", "Docker", "Nginx"],
     problem:
-      "Informações chegavam de múltiplas origens, em formatos e cadências diferentes, sem um fluxo unificado — gerando inconsistência, retrabalho e risco em janelas críticas de operação.",
+      "A ferramenta contratada custava cerca de R$ 5 mil por mês e cobrava à medida que a equipe crescia.",
     technicalDecision:
-      "Microsserviços desacoplados por filas (ingestão, validação, enriquecimento e publicação); MongoDB para esquemas variáveis por origem; AWS Lambda para picos; Docker para deploy; React para monitoramento operacional.",
-    tradeOff:
-      "Evolução e resiliência por etapa vs. maior complexidade operacional (observabilidade, contratos entre serviços e deploy coordenado).",
+      "Desenhei o domínio e o fluxo, fiz o protótipo em Figma e implementei interface e alterações no back-end junto a outro desenvolvedor. A diretoria decidiu internalizar.",
     result:
-      "Fluxo estável em operação contínua, com integrações desacopladas e menos dependência de tratamento manual entre fontes.",
+      "Entregamos um MVP em um mês. A empresa desligou o SaaS, que custava aproximadamente R$ 5 mil por mês.",
+  },
+  {
+    name: "Automação de relatórios",
+    company: "Grupo Prime",
+    description:
+      "Automatizei etapas manuais de categorização e geração de relatórios com Python.",
+    stack: ["Python"],
+    problem: "A rotina exigia trabalho manual recorrente.",
+    technicalDecision:
+      "Substituí etapas repetitivas por automações de processos.",
+    result:
+      "A estimativa interna foi de aproximadamente 20 horas poupadas por mês.",
   },
 ];

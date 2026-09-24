@@ -13,8 +13,9 @@ export function ContactSection() {
           Vamos Trabalhar Juntos?
         </h2>
         <p className="mb-6 font-['Poppins:Regular',sans-serif] text-xl text-[#d0cce9]">
-          Aberto a novas oportunidades e projetos desafiadores. Entre em contato
-          para conversarmos sobre como posso agregar valor ao seu time.
+          Disponível para início imediato em oportunidades como Software
+          Engineer Full Stack. Se você está contratando, fale comigo pelo
+          LinkedIn ou e-mail.
         </p>
 
         <div className="mb-10 flex flex-col items-center justify-center gap-2 font-['Poppins:Regular',sans-serif] text-[#d0cce9]">

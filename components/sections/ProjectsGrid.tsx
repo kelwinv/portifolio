@@ -66,7 +66,7 @@ export function ProjectsGrid({
             active={tag === "code"}
             onClick={() => setTag("code")}
           >
-            Code
+            Código
           </Button>
         </div>
       )}

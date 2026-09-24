@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/seo/site";
 export const metadata = createPageMetadata({
   title: "Projetos",
   description:
-    "Portfólio completo de projetos pessoais — full stack, Node.js, React e experimentos de design.",
+    "Projetos pessoais e de estudo com JavaScript, React, Node.js e CSS.",
   path: "/projetos",
 });
 
@@ -28,7 +28,8 @@ export default function ProjetosPage() {
             Todos os projetos
           </h1>
           <p className="mt-4 max-w-2xl font-['Poppins:Regular',sans-serif] text-lg text-[#3e3b53]">
-            Coleção completa com filtros por tipo — code, design e full stack.
+            Projetos pessoais desenvolvidos em cursos e estudos independentes.
+            Filtre por interface visual ou código.
           </p>
 
           <div className="mt-10">
