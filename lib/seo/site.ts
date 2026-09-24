@@ -6,10 +6,10 @@ export const SITE_URL = SITE_LINKS.portfolio.replace(/\/$/, "");
 
 export const SITE_NAME = "Kelwin Vieira";
 
-export const DEFAULT_TITLE = "Kelwin Vieira | Desenvolvedor Full Stack";
+export const DEFAULT_TITLE = "Kelwin Vieira | Software Engineer Full Stack";
 
 export const DEFAULT_DESCRIPTION =
-  "Desenvolvedor Full Stack em React, Next.js, Node.js e Nest.js — startups, equipes ágeis, AWS, Docker e APIs REST.";
+  "Software Engineer Full Stack com mais de 5 anos de experiência profissional. Cases em React, Node.js, regras de negócio e produtos web.";
 
 export const PROFILE_IMAGE_PATH = "/profile.webp";
 

@@ -43,8 +43,9 @@ export type projectInfoType = {
 const projectsInfo: projectInfoType[] = [
   {
     imgUrl: hollowKnightImg,
-    name: "hollowKnight site",
-    about: "um site feito com sass, quem tem como base o jogo hollowKnight",
+    name: "Hollow Knight",
+    about:
+      "Página temática desenvolvida com Sass, inspirada no jogo Hollow Knight.",
     github: "https://github.com/kelwinv/hollow-knight-scss",
     project: "https://kelwinv.github.io/hollow-knight-scss",
     tecs: [SiSass, SiJavascript, SiHtml5, SiCss3],
@@ -53,8 +54,8 @@ const projectsInfo: projectInfoType[] = [
   },
   {
     imgUrl: nodeImg,
-    name: "nlw04-node",
-    about: "Feito na nlw 4, é um projeto de email que recebe nps dos usuários",
+    name: "NLW 04 — NPS",
+    about: "Projeto da NLW 4 para envio de e-mails com pesquisa NPS.",
     github: "https://github.com/kelwinv/nlw04-node",
     tecs: [SiTypescript, SiNodedotjs, DiSqllite],
     tag: "code",
@@ -62,20 +63,19 @@ const projectsInfo: projectInfoType[] = [
   },
   {
     imgUrl: nlw4Img,
-    name: "moveit",
+    name: "Move.it",
     about:
-      "é uma aplicação que visa melhorar a saúde, dando exercícios a cada 25 minutos",
+      "Projeto de estudo que combina pausas programadas com exercícios durante o trabalho.",
     github: "https://github.com/kelwinv/moveit",
     project: "https://nextmoveit.vercel.app",
     tecs: [SiTypescript, SiNextdotjs],
     tag: "design",
-    featured: true,
+    featured: false,
   },
   {
     imgUrl: devListImg,
-    name: "dev list",
-    about:
-      "uma forma de compartilhar seu perfil no github com quem passar pelo site",
+    name: "Dev List",
+    about: "Página para compartilhar dados de perfil do GitHub.",
     github: "https://github.com/kelwinv/dev-list",
     project: "https://dev-list.vercel.app",
     tecs: [SiTypescript, SiReact, SiStyledcomponents],
@@ -84,18 +84,19 @@ const projectsInfo: projectInfoType[] = [
   },
   {
     imgUrl: devListImg,
-    name: "dev list server",
+    name: "Dev List Server",
     about:
-      "uma forma de compartilhar seu perfil no github com quem passar pelo site",
+      "API para disponibilizar dados de perfil do GitHub em conjunto com a interface Dev List.",
     github: "https://github.com/kelwinv/dev-list-server",
     tecs: [SiTypescript, SiNodedotjs, SiPostgresql],
     tag: "code",
-    featured: true,
+    featured: false,
   },
   {
     imgUrl: chatComSocketImg,
-    name: "chat com socket.io",
-    about: "chat em tempo real com node + socket",
+    name: "Chat com Socket.IO",
+    about:
+      "Projeto de estudo de comunicação em tempo real entre interface React e servidor Node.js.",
     github: "https://github.com/kelwinv/chat-com-socket.io",
     tecs: [
       SiTypescript,
@@ -105,13 +106,13 @@ const projectsInfo: projectInfoType[] = [
       SiStyledcomponents,
     ],
     tag: "all",
-    featured: true,
+    featured: false,
   },
 
   {
     imgUrl: amongUsImg,
-    name: "among Us css",
-    about: "um desafio de css feito com objetivo de testar conhecimento",
+    name: "Among Us CSS",
+    about: "Desafio de desenho feito com HTML e CSS.",
     github: "https://github.com/kelwinv/amongUs-css-drawing",
     project: "https://kelwinv.github.io/amongUs-css-drawing/",
     tecs: [SiHtml5, SiCss3],
@@ -122,7 +123,7 @@ const projectsInfo: projectInfoType[] = [
     imgUrl: ecoletaImg,
     name: "Ecoleta",
     about:
-      "conecta empresas de coleta de resíduos as pessoas que precisam descartar seus resíduos",
+      "Aplicação para conectar pessoas que precisam descartar resíduos a pontos de coleta.",
     github: "https://github.com/kelwinv/NLW-Booster",
     tecs: [SiTypescript, DiSqllite, SiNodedotjs, SiReact],
     tag: "all",
@@ -130,9 +131,8 @@ const projectsInfo: projectInfoType[] = [
   },
   {
     imgUrl: beTheHeroImg,
-    name: "be the hero",
-    about:
-      "Conecta ONGs e outras instituições a pessoas que tem disponibilidade para ajudar",
+    name: "Be The Hero",
+    about: "Aplicação que conecta ONGs a pessoas interessadas em ajudar.",
     github: "https://github.com/kelwinv/semanaOminiStack11",
     tecs: [SiJavascript, DiSqllite, SiNodedotjs, SiReact],
     tag: "all",
@@ -141,17 +141,16 @@ const projectsInfo: projectInfoType[] = [
   {
     imgUrl: gameListImg,
     name: "Game List",
-    about: "Aplicação que permite que você salve seu jogos favoritos",
+    about: "Aplicação de estudo para organizar jogos favoritos.",
     github: "https://github.com/kelwinv/Game-list",
     tecs: [SiTypescript, SiPostgresql, SiReact, SiStyledcomponents],
     tag: "all",
-    featured: true,
+    featured: false,
   },
   {
     imgUrl: randomizadorImg,
     name: "Randomizador de texto",
-    about:
-      "permite que você escolha uma palavra que retornara as letras embaralhadas ",
+    about: "Ferramenta para embaralhar as letras de uma palavra.",
     github: "https://github.com/kelwinv/randomizador-de-texto",
     project: "https://randomizador-de-texto.herokuapp.com/",
     tecs: [SiTypescript, SiReact, SiStyledcomponents],
@@ -161,7 +160,8 @@ const projectsInfo: projectInfoType[] = [
   {
     imgUrl: happyVideo,
     name: "Happy",
-    about: "um app voltado a vistas a casas de adoção, Feito na nlw3",
+    about:
+      "Projeto de estudo relacionado a visitas a casas de adoção, feito na NLW 3.",
     github: "https://github.com/kelwinv/NextLevelWeek3",
     tecs: [SiTypescript, SiNodedotjs, DiSqllite, SiReact],
     tag: "all",
@@ -170,7 +170,7 @@ const projectsInfo: projectInfoType[] = [
   {
     imgUrl: proffyImg,
     name: "Proffy",
-    about: "um app que conecta professores a alunos, feito na nlw2",
+    about: "Projeto da NLW 2 que conecta professores e alunos.",
     github: "https://github.com/kelwinv/nextlevelweek02",
     tecs: [SiTypescript, SiNodedotjs, DiSqllite, SiReact],
     tag: "all",
@@ -179,14 +179,14 @@ const projectsInfo: projectInfoType[] = [
   {
     imgUrl:
       "https://github.com/kelwinv/nlw06-letmeask/blob/main/.github/Capa.png?raw=true",
-    name: "letmeask",
+    name: "Letmeask",
     about:
-      "Letmeask é uma aplicação feita para facilitar as pergutas de seus espectadores",
+      "Projeto de estudo para organizar perguntas enviadas por espectadores durante transmissões.",
     github: "https://github.com/kelwinv/nlw06-letmeask/",
     project: "https://nlw06letmeask.web.app",
     tecs: [SiTypescript, SiFirebase, SiReact],
     tag: "code",
-    featured: true,
+    featured: false,
   },
 ];
 

@@ -30,10 +30,10 @@ export function HeroSection() {
               Kelwin Vieira
             </h1>
             <p className="mt-3 font-['Montserrat:Medium',sans-serif] text-xl text-[#3e3b53]">
-              Desenvolvedor Full Stack
+              Software Engineer Full Stack
             </p>
             <p className="mt-2 font-['Poppins:Medium',sans-serif] text-base tracking-wide text-[#3e3b53]">
-              TypeScript · React · Next.js · Node.js · Nest.js
+              TypeScript · React · Node.js · NestJS
             </p>
 
             <div className="mt-4 flex flex-col gap-1 font-['Poppins:Regular',sans-serif] text-sm text-[#3e3b53]">
@@ -44,10 +44,10 @@ export function HeroSection() {
             </div>
 
             <p className="mt-8 max-w-xl font-['Poppins:Regular',sans-serif] text-lg leading-relaxed text-[#0f0d1d]">
-              Full Stack em startups e médias empresas: liderança em equipes
-              ágeis, APIs robustas com Node/Nest e produtos web com React e
-              Next.js — com foco em inovação e redução de custos em cloud e
-              DevOps.
+              Mais de 5 anos construindo produtos web em equipes profissionais.
+              Na iFollow, reduzi o carregamento de um dashboard de cerca de 5
+              minutos para cerca de 2 segundos. Trabalho de ponta a ponta, do
+              React às APIs e regras de negócio.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">

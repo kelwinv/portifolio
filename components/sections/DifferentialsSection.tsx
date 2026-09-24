@@ -3,35 +3,22 @@ import { StaggerItem, StaggerReveal } from "@/components/ui/StaggerReveal";
 export function DifferentialsSection() {
   const differentials = [
     {
-      icon: "🏗️",
-      title: "Arquitetura limpa e código manutenível",
-      description: "Clean Architecture, SOLID e boas práticas",
-    },
-    {
-      icon: "⚡",
-      title: "Entrega rápida sem sacrificar qualidade",
-      description: "Foco em MVP e iteração contínua",
-    },
-    {
-      icon: "💡",
-      title: "Visão de produto e negócio",
-      description: "Entendimento do impacto além do código",
-    },
-    {
-      icon: "💰",
-      title: "Experiência com otimização de custos",
-      description: "Infraestrutura eficiente e escalável",
-    },
-    {
-      icon: "🔧",
-      title: "Do frontend à infraestrutura",
-      description: "Capacidade de atuar em toda a stack",
-    },
-    {
-      icon: "🤝",
-      title: "Liderança de times e comunicação com stakeholders",
+      icon: "🔎",
+      title: "Investigo antes de otimizar",
       description:
-        "Mentoria e coordenação técnica, alinhamento com produto e negócio",
+        "Medi a renderização por componente para localizar o gargalo do dashboard da iFollow antes de mudar sua implementação.",
+    },
+    {
+      icon: "🧭",
+      title: "Modelo regras de negócio",
+      description:
+        "No Cronos, delimitei fluxos e modelei regras de cashflow para ajudar a viabilizar a primeira versão.",
+    },
+    {
+      icon: "🤖",
+      title: "Uso IA com contexto e critérios",
+      description:
+        "No trabalho, explicito contexto, padrões do projeto, critérios de aceite e guardrails antes de implementar com IA.",
     },
   ];
 
@@ -39,7 +26,7 @@ export function DifferentialsSection() {
     <section className="bg-white px-4 py-28 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-16 text-center font-['Poppins:Bold',sans-serif] text-5xl text-[#0f0d1d]">
-          Diferenciais
+          Como trabalho
         </h2>
         <StaggerReveal className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {differentials.map((diff, index) => (
