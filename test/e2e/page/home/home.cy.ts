@@ -19,14 +19,14 @@ describe("Portfolio home", () => {
     );
   });
 
-  it("should scroll to Destaques corporativos when clicking Destaques in nav", () => {
+  it("should scroll to Casos de produto when clicking Destaques in nav", () => {
     cy.viewport(1280, 800);
     cy.get('nav[aria-label="Principal"]')
       .contains("button", "Destaques")
       .click();
     cy.location("hash").should("eq", "#destaques");
     cy.get("#destaques").should("be.visible");
-    cy.contains("h3", "Destaques corporativos").should("be.visible");
+    cy.contains("h3", "Casos de produto").should("be.visible");
   });
 
   it("should scroll to Projetos pessoais when clicking Projetos in nav", () => {

@@ -33,9 +33,11 @@ describe("Home Page", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders hero pitch aligned with LinkedIn summary", () => {
+  it("renders the audited dashboard result in the hero pitch", () => {
     render(<Home />);
-    expect(screen.getByText(/liderança em equipes ágeis/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Na iFollow, reduzi o carregamento de um dashboard/i),
+    ).toBeInTheDocument();
   });
 
   it("renders contact location and phone", () => {
@@ -43,9 +45,9 @@ describe("Home Page", () => {
     expect(screen.getAllByText(/Osasco, São Paulo/i).length).toBeGreaterThan(0);
   });
 
-  it("renders link to all projects", () => {
+  it("renders link to study projects", () => {
     render(<Home />);
-    const link = screen.getByRole("link", { name: /ver todos os projetos/i });
+    const link = screen.getByRole("link", { name: /ver projetos de estudo/i });
     expect(link).toHaveAttribute("href", "/projetos");
   });
 
@@ -78,11 +80,11 @@ describe("Home Page", () => {
     );
   });
 
-  it("renders experience from Profile.pdf", () => {
+  it("renders audited employment dates", () => {
     render(<Home />);
     expect(screen.getAllByText(/iFollow Brasil/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/ENLINE/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/jun\. 2025 – Atual/i)).toBeInTheDocument();
+    expect(screen.getByText(/jun\. 2025 – ago\. 2026/i)).toBeInTheDocument();
   });
 
   it("renders Grupo Prime experience with pleno tenure in period", () => {
@@ -91,14 +93,14 @@ describe("Home Page", () => {
       screen.getByRole("heading", { name: /Grupo Prime/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/set\. 2023 – mai\. 2025 · pleno desde jan\/2024/i),
+      screen.getByText(/set\. 2023 – mai\. 2025 · pleno desde jan\. 2024/i),
     ).toBeInTheDocument();
   });
 
   it("renders ENLINE experience with pleno tenure in period", () => {
     render(<Home />);
     expect(
-      screen.getByText(/jul\. 2021 – ago\. 2023 · pleno desde mai\/2022/i),
+      screen.getByText(/jul\. 2021 – ago\. 2023 · pleno desde mai\. 2022/i),
     ).toBeInTheDocument();
   });
 
@@ -118,16 +120,17 @@ describe("Home Page", () => {
     );
   });
 
-  it("renders corporate highlights section", () => {
+  it("renders verified product cases without discarded claims", () => {
     render(<Home />);
     expect(
-      screen.getByRole("heading", { name: /destaques corporativos/i }),
+      screen.getByRole("heading", { name: /casos de produto/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getAllByRole("heading", {
-        name: /Sistema de Monitoramento de alertas/i,
-      }).length,
-    ).toBeGreaterThan(0);
+      screen.getByRole("heading", { name: /dashboard de monitoramento/i }),
+    ).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent(
+      /99,3%|30% nos custos|2\.000 usuários|300\+ itens/i,
+    );
   });
 
   it("renders languages including Spanish", () => {
